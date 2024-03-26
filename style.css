@@ -8,43 +8,57 @@ body>header>h1{
     text-align: center;
 }
 nav{
-    background-color: green;
+    background-color: transparent;
     width: 20%;
     padding: 0 0 10px 0;
 
 }
 body>header>nav>ul>h2{
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     background-color: red;
     margin-bottom: 20px;
 }
 body>header>nav>ul{
     list-style-type: none;
+    background-color: lightblue;
 }
 body>header>nav>ul>li{
     padding: 15px 0 15px 0;
 }
-button{
-    width: 100%;
-}
-body>header>nav>ul>li>button>a{
+body>header>nav>ul>li>a>button{
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 600;
     color: darkblue;
     width: 100%;
+    background-color: lightcoral;
+    padding: 10px 0px 10px 0px;
+    border: none;
 
+    
 }
-body>header>nav>ul>li>button>a:hover{
-    text-decoration: none;
-    font-size: 17px;
-    letter-spacing: 1px;
-    font-weight: 400;
+body>header>nav>ul>li>a>button:hover{
+    letter-spacing: 2px;
     color: red;
     transition: 0.18s ease-in;
-    width: 100%;
-   
+    cursor: pointer;
+    border-bottom-style: 1px solid;
+}
 
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: lightgray;
+    height: 450px;
 }
