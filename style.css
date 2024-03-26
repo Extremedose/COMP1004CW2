@@ -1,5 +1,5 @@
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
 }
 body>header>h1{
@@ -10,11 +10,41 @@ body>header>h1{
 nav{
     background-color: green;
     width: 20%;
+    padding: 0 0 10px 0;
 
+}
+body>header>nav>ul>h2{
+    font-size: 1.5em;
+    text-align: center;
+    background-color: red;
+    margin-bottom: 20px;
 }
 body>header>nav>ul{
     list-style-type: none;
 }
-body>header>nav>ul>li>a{
+body>header>nav>ul>li{
+    padding: 15px 0 15px 0;
+}
+button{
+    width: 100%;
+}
+body>header>nav>ul>li>button>a{
     text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: darkblue;
+    width: 100%;
+
+}
+body>header>nav>ul>li>button>a:hover{
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: red;
+    transition: 0.18s ease-in;
+    width: 100%;
+   
+
 }
