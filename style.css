@@ -88,3 +88,15 @@ footer{
     background-color: brown;
     padding: 0 5px 20px 10px;
 }
+.sub-main-footer-split-sitemap-unorderedlist>li{
+    padding-top: 15px;
+}
+.sub-main-footer-split-sitemap-unorderedlist>li>a{
+    font-size: 1.1em;
+    text-decoration: none;
+}
+.sub-main-footer-split-sitemap-unorderedlist>li>a:active{
+    font-size: 1.1em;
+    text-decoration: none;
+    color: purple;
+}
