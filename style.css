@@ -67,11 +67,11 @@ footer{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;   
     margin: 0px 15px 0px 15px;
+    padding-top: 40px;
 }
 .main-footer>div{
     background-color: aqua;
     padding: 0 5px 20px 10px;
-
 }
 .sub-main-footer-split{
     display: grid;
@@ -104,13 +104,11 @@ footer{
     text-decoration: none;
     color: purple;
 }
-
 .sub-main-footer-3rd{
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 5px;
 }
-
 .sub-main-footer-3rd>div{
     position: relative;
     margin-top: 10px;
