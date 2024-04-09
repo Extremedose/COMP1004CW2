@@ -112,8 +112,20 @@ footer{
 }
 
 .sub-main-footer-3rd>div{
-
+    position: relative;
     margin-top: 10px;
     background-color: tomato;
-
 }
+.sub-main-footer-3rd-copyright>span{
+    position: absolute;
+    bottom: 0px;
+}
+.sub-main-footer-3rd-agency{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub-main-footer-3rd-agency>span{
+    text-align: center;
+}
+
