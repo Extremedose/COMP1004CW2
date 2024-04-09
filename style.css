@@ -65,7 +65,7 @@ footer{
 .main-footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;   
+    gap: 100px;   
     margin: 0px 15px 0px 15px;
     padding-top: 40px;
 }
@@ -84,16 +84,15 @@ footer{
     padding: 0;
     margin: 0;
 }
-.sub-main-footer-split>div{
-    background-color: brown;
+.sub-main-footer-split{
     padding: 0 5px 20px 10px;
 }
 .sub-main-footer-split-sitemap-unorderedlist{
-    margin-left: 15px;
+    margin-left: 50px;
 }
 .sub-main-footer-split-sitemap-unorderedlist>li{
-    padding-top: 15px;
-    margin-top: 5px;
+    padding-top: 25px;
+    list-style-type: circle;
 }
 .sub-main-footer-split-sitemap-unorderedlist>li>a{
     font-size: 1.1em;
@@ -112,11 +111,11 @@ footer{
 .sub-main-footer-3rd>div{
     position: relative;
     margin-top: 10px;
-    background-color: tomato;
 }
 .sub-main-footer-3rd-copyright>span{
     position: absolute;
     bottom: 0px;
+    text-align: center;
 }
 .sub-main-footer-3rd-agency{
     display: flex;
