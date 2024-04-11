@@ -8,12 +8,15 @@ header{
 }
 .web-title-header{
     background-color: #004658;
-    position: relative;
-    height: auto; 
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
 }
 
 .web-title-header>h1{
     margin: 0;
+    justify-content: center;
 }
 nav{
     background-color: transparent;
@@ -111,10 +114,10 @@ footer{
     text-transform: uppercase;
 }
 .second-footer-box-sitemap{
-    padding: 2px 0px 0 10px;
+    padding: 0 0px 0 10px;
 }
 .second-footer-box-sitemap>ul>li{
-    padding-top: 10px;
+    padding-top: 15px;
     list-style-type: circle;
     text-decoration: none;
     
@@ -122,6 +125,15 @@ footer{
 
 .second-footer-box-sitemap>ul>li>a{
     color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.second-footer-box-sitemap>ul>li>a:hover{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.18s ease-in;
 }
 
 
