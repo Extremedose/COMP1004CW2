@@ -98,6 +98,9 @@ footer{
 .first-footer-box{
     position: relative;
 }
+.first-footer-box>h3{
+    text-align: center;
+}
 .first-footer-box-AutoTrack-description{
     text-align: center;
     padding-top: 25px;
@@ -105,7 +108,6 @@ footer{
 .first-footer-box-copyRight{
     position: absolute;
     bottom: 0;
-
 }
 .second-footer-box{
     margin-left: 25%;
