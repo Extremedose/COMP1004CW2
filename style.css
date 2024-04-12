@@ -73,6 +73,52 @@ nav>ul>li>a>button:hover{
     text-align: center;
     font-size: 2.5em;
 }
+.search-people-form{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.search-people-form>form{
+    width: 70%;
+    background-color: #4b999e98;
+    border-radius: 0.8em;
+    border: 2px solid #000;
+    padding: 1em 1em 2em 2em;
+}
+.search-people-form>form>p{
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.search-people-form>form>label{
+    font-size: 1.1em;
+}
+#search_input_text{
+    width: 60%;
+    height: 2em;
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0.3em;
+    border: 2px solid #000;
+
+}
+.search-people-form>form>button{
+    margin-top: 2em;
+    padding: 0.4em 1.8em 0.4em 1.8em;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 0.5em;
+    border: 2px transparent solid;
+}
+.search-people-form>form>button:hover{
+    margin-top: 2em;
+    padding: 0.4em 1.8em 0.4em 1.8em;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 0.5em;
+    border: 2px solid;
+    cursor: pointer;
+    transition: 0.18s ease-in;
+}
 
 
 

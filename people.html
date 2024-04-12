@@ -35,6 +35,26 @@
         <div class="main-body">
             <h1>Search People</h1>
 
+            <div class="search-people-form">
+                <form>
+                    <p>Search By:</p><br>
+
+                    <input type="radio" id="search_by_name" name="search_option" value="name">
+                    <label for="search_by_name">Name</label><br><br>
+    
+                    <input type="radio" id="search_by_licence_number" name="search_option" value="licence_number">
+                    <label for="search_by_licence_number">Licence Number</label><br><br>
+                    
+                    <label for="search_input">Input:&nbsp;&nbsp;</label>
+                    <input type="text" id="search_input_text" name="search_option" required maxlength="50"/><br>
+                    
+                    <button type="button" onclick="getSelectedOption()">Search</button>
+
+                </form>
+            </div>
+
+            
+
         </div>
 
     </main>
