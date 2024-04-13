@@ -119,7 +119,17 @@ nav>ul>li>a>button:hover{
     cursor: pointer;
     transition: 0.18s ease-in;
 }
-
+.table-to-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 0 10em 0;
+    
+}
+.table-to-display>table{
+    width: 70%;
+    background-color: bisque;
+}
 
 
 
