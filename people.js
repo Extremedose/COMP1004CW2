@@ -1,38 +1,90 @@
-const peopleCSV = 'People.csv';
+function fetchAndParseCSV() {
+    fetch('coursework-database/People.csv')
+        .then(response => response.text())
+        .then(csv => {
+            const rows = csv.split('\n').slice(1);
+            const tableBody = document.getElementById('table_body');
 
-function getSelectedOption() {
-  const option = document.getElementsByName("search_option");
+            rows.forEach((row, index) => {
+                const cells = row.split(',');
+                const personID = cells[0];
+                const name = cells[1];
+                const address = cells[2];
+                const dob = cells[3];
+                const licenseNumber = cells[4];
+                const expiryDate = cells[5];
 
-  if (option[0].checked) {
-    console.log("Selected Option: " + option[0].value);
-    filterByName();
-    return option[0].value;
-  }
-  if (option[1].checked) {
-    console.log("Selected Option: " + option[1].value);
-    filterByLicenceNo();
-    return option[1].value;
-  } else {
-    console.log("No option was selected");
-  }
+                const newRow = document.createElement('tr');
+                newRow.classList.add(index % 2 === 0 ? 'light-grey-row' : 'white-row');
+                
+                const personIDCell = document.createElement('td');
+                personIDCell.textContent = personID;
+                const nameCell = document.createElement('td');
+                nameCell.textContent = name;
+                const addressCell = document.createElement('td');
+                addressCell.textContent = address;
+                const dobCell = document.createElement('td');
+                dobCell.textContent = dob;
+                const licenseNumberCell = document.createElement('td');
+                licenseNumberCell.textContent = licenseNumber;
+                const expiryDateCell = document.createElement('td');
+                expiryDateCell.textContent = expiryDate;
+
+                newRow.appendChild(personIDCell);
+                newRow.appendChild(nameCell);
+                newRow.appendChild(addressCell);
+                newRow.appendChild(dobCell);
+                newRow.appendChild(licenseNumberCell);
+                newRow.appendChild(expiryDateCell);
+
+                tableBody.appendChild(newRow);
+            });
+        })
+        .catch(error => console.error('Error fetching the CSV file:', error));
 }
-
 function filterByName() {
-  const inputElement = document.getElementById("search_input_text");
-  const inputValueName = inputElement.value;
-  console.log("Name to search for:", inputValueName);
-  const column = 0;
-  readCSVFile(inputValueName, column);
+    const searchInput = document.getElementById('search_input_text').value.toLowerCase();
+    const rows = document.querySelectorAll('#table_body tr');
+
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        if (name.includes(searchInput)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+function filterByLicenseNumber() {
+    const searchInput = document.getElementById('search_input_text').value.toLowerCase();
+    const rows = document.querySelectorAll('#table_body tr');
+
+    rows.forEach(row => {
+        const licenseNumber = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+        if (licenseNumber.includes(searchInput)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
 }
 
-function filterByLicenceNo() {
-  const inputElement = document.getElementById("search_input_text");
-  const inputValueLicenceNo = inputElement.value;
-  console.log("Licence number to search for:", inputValueLicenceNo);
-  const column = 4;
-  readCSVFile(inputValueLicenceNo, column);
-}
+function filter() {
+    const option = document.getElementsByName("search_option");
+    let selectedOption = null;
 
-function readCSVFile(dataToFilter, column) {
-  
+    for (let i = 0; i < option.length; i++) {
+        if (option[i].checked) {
+            selectedOption = option[i].value;
+            break;
+        }
+    }
+    if (selectedOption === 'name') {
+        filterByName();
+    } else if (selectedOption === 'licence_number') {
+        filterByLicenseNumber();
+    } else {
+        console.log("No option was selected");
+    }
 }
+window.onload = fetchAndParseCSV;

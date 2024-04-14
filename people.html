@@ -48,26 +48,31 @@
                     <label for="search_input">Input:&nbsp;&nbsp;</label>
                     <input type="text" id="search_input_text" name="search_option" required maxlength="50"/><br>
                     
-                    <button type="button" onclick="getSelectedOption()">Search</button>
+                    
+                    <button type="button" onclick="filter()">Search</button>
 
                 </form>
             </div>
-
             <div class="table-to-display">
-                <table>
+                <table id="people_table">
                     <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Licence No</th>
-                      </tr>
+                        <tr>
+                            <th>PersonID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>DOB</th>
+                            <th>LicenseNumber</th>
+                            <th>ExpiryDate</th>
+                        </tr>
                     </thead>
-                    <tbody id="table-body"></tbody>
-                  </table>
+                    <tbody id="table_body">
+                    </tbody>
+                </table>
             </div>
         </div>
+
+
+        
 
     </main>
 

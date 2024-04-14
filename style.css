@@ -1,7 +1,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    color: #FFFF;
+    color: #fff;
 }
 header{
     width: 100%;
@@ -33,10 +33,12 @@ nav>ul>h2{
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
+    padding-top: 0.8em;
 }
 nav>ul{
     list-style-type: none;
     background-color: #004658;
+    border-radius: 3px;
 }
 nav>ul>li{
     padding: 15px 0 15px 0;
@@ -119,16 +121,32 @@ nav>ul>li>a>button:hover{
     cursor: pointer;
     transition: 0.18s ease-in;
 }
+.light-grey-row {
+    background-color: #f2f2f2;
+}
+.white-row {
+    background-color: #ffffff;
+}
 .table-to-display{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4em 0 10em 0;
+    padding: 2em 0 5em 0;
+
     
 }
 .table-to-display>table{
-    width: 70%;
-    background-color: bisque;
+    width: 73%;
+    background-color: #4b999e98;
+    text-align: left;
+}
+.table-to-display>table>thead>tr{
+    height: 3em;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.table-to-display>table>tbody>tr{
+    height: 2em;
 }
 
 
