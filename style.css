@@ -131,9 +131,7 @@ nav>ul>li>a>button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2em 0 5em 0;
-
-    
+    padding: 2em 0 5em 0;   
 }
 .table-to-display>table{
     width: 73%;
