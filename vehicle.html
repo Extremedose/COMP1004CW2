@@ -7,7 +7,9 @@
     <title>Vehicle | AutoTrack</title>
     <link rel="icon" type="image/x-icon" href="AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="/vehicle.js"></script>
+    
 </head>
 
 <body>
@@ -33,8 +35,42 @@
         </nav>
 
         <div class="main-body">
-            <h1>Vehicle Search</h1>
+            <h1>Search Vehicle</h1>
 
+            <div class="search-people-form">
+                <form>
+                    <p>Search:</p><br>
+                    
+                    <label for="search_input">Input:&nbsp;&nbsp;</label>
+                    <input type="text" id="search_input_text" name="search_option" required maxlength="50"/><br>
+                    
+                    
+                    <button type="button">Search</button>  <!-- filter to be added (js) -->
+
+                </form>
+            </div>
+            <div class="title-for-table-result">
+                <span><h2>Results</h2></span>
+            </div>
+            <div class="table-to-display">
+                <div class="table">
+                    <table id="vehicle_table"> <!--Add this-->
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Licence Number</th>
+                                <th>VehicleID</th>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Color</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
         </div>
 
     </main>
