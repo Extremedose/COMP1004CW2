@@ -23,7 +23,7 @@ main{
     display: grid;
     grid-template-columns: 1fr 4fr
 }
-nav{
+.sidebar{
     background-color: transparent;
     padding: 0 0 10px 0;
     grid-column: 1;
@@ -163,7 +163,6 @@ nav>ul>li>a>button:hover{
 .table>table>tbody>tr{
     height: 2em;
 }
-
 
 
 
