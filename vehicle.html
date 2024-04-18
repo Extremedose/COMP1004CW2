@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" defer></script>
     <script type="module" src="vehicle.js" defer></script>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@supabase/functions-js": "./node_modules/@supabase/functions-js/dist/module/index.js",
+            "@supabase/gotrue-js": "./node_modules/@supabase/gotrue-js/dist/module/index.js",
+            "@supabase/postgres-js": "./node_modules/@supabase/postgres-js/dist/module/index.js",
+            "@supabase/realtime-js": "./node_modules/@supabase/realtime-js/dist/module/index.js",
+            "@supabase/storage-js": "./node_modules/@supabase/storage-js/dist/module/index.js",
+            "@supabase/supabase-js": "./node_modules/@supabase/supabase-js/dist/module/index.js"
+          }
+        }
+      </script>
+      
+      <script type="module">
+        import { createClient } from "@supabase/supabase-js";
+        console.log(createClient);
+      </script>
     
 </head>
 
