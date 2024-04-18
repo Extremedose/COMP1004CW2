@@ -1,4 +1,4 @@
-import { createClient } from '/node_modules/@supabase/supabase-js'; // Use the correct relative path to the Supabase JS file
+import { createClient } from './node_modules/@supabase/supabase-js'; // Use the correct relative path to the Supabase JS file
 
 // Your Supabase URL and Key
 const SupabaseUrl = 'https://xjmheuyoyvjlgfpfwdqs.supabase.co';
