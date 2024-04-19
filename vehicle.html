@@ -8,12 +8,7 @@
     <link rel="icon" type="image/x-icon" href="AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
     <script src="vehicle.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        
-    
-      </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>    
 </head>
 
 <body>
@@ -31,7 +26,7 @@
                 <h2>Content</h2>
                 <br>
                 <br>
-                <li><a href="#" onclick="test()"><button>Home</button></a></li>
+                <li><a href="#" onclick="loadAllData()"><button>Home</button></a></li>
                 <li><a href="people.html" target="_blank"><button>People</button></a></li>
                 <li><a href="vehicle.html" target="_blank"><button>Vehicle</button></a></li>
                 <li><a href="offences.html" target="_blank"><button>Offences</button></a></li>
@@ -66,10 +61,18 @@
                                 <th>VehicleID</th>
                                 <th>Make</th>
                                 <th>Model</th>
-                                <th>Color</th>
+                                <th>Colour</th>
                             </tr>
                         </thead>
-                        <tbody id="table_body">
+                        <tbody id="vehicle-table_body">
+                            <tr>
+                                <td id="people-name"></td>
+                                <td id="people-license"></td>
+                                <td id="vehicle-id"></td>
+                                <td id="vehicle-make"></td>
+                                <td id="vehicle-model"></td>
+                                <td id="vehicle-colour"></td>
+                              </tr>
                         </tbody>
                     </table>
                 </div>

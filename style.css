@@ -163,6 +163,9 @@ nav>ul>li>a>button:hover{
 .table>table>tbody>tr{
     height: 2em;
 }
+#vehicle-table_body{
+    height: 400px;
+}
 
 
 
