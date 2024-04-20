@@ -164,7 +164,7 @@ nav>ul>li>a>button:hover{
     height: 2em;
 }
 #vehicle-table_body{
-    height: 400px;
+    height: auto;
 }
 
 
