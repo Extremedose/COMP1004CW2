@@ -19,6 +19,7 @@ async function loadAllData() {
 
   data.forEach(vehicle => {
       const row = document.createElement('tr');
+      
       row.innerHTML = `
           <td>${vehicle.People ? vehicle.People.Name || 'Not Known' : 'Not Known'}</td>
           <td>${vehicle.People ? vehicle.People.LicenseNumber || 'Not Known' : 'Not Known'}</td>
@@ -30,3 +31,5 @@ async function loadAllData() {
       tableBody.appendChild(row);
   });
 }
+
+window.onload = loadAllData;
