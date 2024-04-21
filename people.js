@@ -20,13 +20,13 @@ async function loadData(searchInput = '', selectionName) {
         }
         if (searchInput && isInput == 0 && selectionName) {
 
-            if(selectionName == "Name"){
+            if (selectionName == "Name") {
                 data = data.filter(people => people.Name.toUpperCase().includes(searchInput.toUpperCase()));
-            }else if(selectionName == "LicenseNumber"){
+            } else if (selectionName == "LicenseNumber") {
                 data = data.filter(people => people.LicenseNumber.toUpperCase().includes(searchInput.toUpperCase()));
             }
-                
-            
+
+
         }
 
 
@@ -80,5 +80,5 @@ async function handleKeyPress(event) {
         event.preventDefault();
         await search();
     }
-  }
+}
 window.onload = loadData;

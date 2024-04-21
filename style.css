@@ -1,12 +1,14 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     color: #fff;
 }
-header{
+
+header {
     width: 100%;
 }
-.web-title-header{
+
+.web-title-header {
     background-color: #004658;
     display: flex;
     width: 100%;
@@ -14,39 +16,46 @@ header{
     justify-content: left;
 }
 
-.web-title-header>h1{
+.web-title-header>h1 {
     margin: 0;
     justify-content: center;
     padding-left: 1%;
 }
-main{
+
+main {
     display: grid;
     grid-template-columns: 1fr 4fr
 }
-.sidebar{
+
+.sidebar {
     background-color: transparent;
     padding: 0 0 10px 0;
     grid-column: 1;
 }
-nav>ul>h2{
+
+nav>ul>h2 {
     font-size: 2em;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     padding-top: 0.8em;
 }
-nav>ul{
+
+nav>ul {
     list-style-type: none;
     background-color: #004658;
     border-radius: 3px;
 }
-nav>ul>li{
+
+nav>ul>li {
     padding: 15px 0 15px 0;
 }
-nav>ul>li>a{
+
+nav>ul>li>a {
     text-decoration: none;
 }
-nav>ul>li>a>button{
+
+nav>ul>li>a>button {
     text-decoration: none;
     font-size: 18px;
     letter-spacing: 1px;
@@ -59,42 +68,50 @@ nav>ul>li>a>button{
     display: block;
     text-align: center;
 }
-nav>ul>li>a>button:hover{
+
+nav>ul>li>a>button:hover {
     letter-spacing: 2px;
     transition: 0.18s ease-in;
     cursor: pointer;
     border-bottom-style: 1px solid;
     border: 1px solid #fff;
 }
-.main-body{
+
+.main-body {
     grid-column: 2/5;
     position: relative;
     color: #004658;
 }
-.main-body>h1{
+
+.main-body>h1 {
     text-align: center;
     font-size: 2.5em;
 }
-.search-people-form{
+
+.search-people-form {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-.search-people-form>form{
+
+.search-people-form>form {
     width: 70%;
     background-color: #4b999e98;
     border-radius: 0.8em;
     border: 2px solid #000;
     padding: 1em 1em 2em 2em;
 }
-.search-people-form>form>p{
+
+.search-people-form>form>p {
     font-weight: 600;
     font-size: 1.3em;
 }
-.search-people-form>form>label{
+
+.search-people-form>form>label {
     font-size: 1.1em;
 }
-.search-bar-class{
+
+.search-bar-class {
     width: 60%;
     height: 2em;
     font-size: 1.1em;
@@ -103,7 +120,8 @@ nav>ul>li>a>button:hover{
     border: 2px solid #000;
 
 }
-.search-people-form>form>button{
+
+.search-people-form>form>button {
     margin-top: 2em;
     padding: 0.4em 1.8em 0.4em 1.8em;
     font-size: 1em;
@@ -111,7 +129,8 @@ nav>ul>li>a>button:hover{
     border-radius: 0.5em;
     border: 2px transparent solid;
 }
-.search-people-form>form>button:hover{
+
+.search-people-form>form>button:hover {
     margin-top: 2em;
     padding: 0.4em 1.8em 0.4em 1.8em;
     font-size: 1em;
@@ -121,23 +140,27 @@ nav>ul>li>a>button:hover{
     cursor: pointer;
     transition: 0.18s ease-in;
 }
-.title-for-table-result{
+
+.title-for-table-result {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 1em;
     padding-bottom: 1em;
 }
-.title-for-table-result>span{
+
+.title-for-table-result>span {
     width: 70%;
 }
-.table-to-display{
+
+.table-to-display {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 10em;
 }
-.table-to-display>.table{
+
+.table-to-display>.table {
     background-color: #0046587a;
     width: 73%;
     border: 2px solid;
@@ -145,22 +168,27 @@ nav>ul>li>a>button:hover{
     max-height: 35em;
     overflow-y: auto;
 }
-.table-to-display>.table>table{
+
+.table-to-display>.table>table {
     width: 100%;
 }
-.table>table>thead>tr{
+
+.table>table>thead>tr {
     height: 3em;
     font-size: 1.1em;
     font-weight: 700;
     text-align: left;
 }
-.table>table>tbody>tr{
+
+.table>table>tbody>tr {
     height: 2em;
 }
-.table-to-display>.table>table>tbody>tr:nth-child(even){
+
+.table-to-display>.table>table>tbody>tr:nth-child(even) {
     background-color: #ffff;
 }
-.table-to-display>.table>table>tbody>tr:nth-child(odd){
+
+.table-to-display>.table>table>tbody>tr:nth-child(odd) {
     background-color: #cec9c9;
 }
 
@@ -172,10 +200,11 @@ nav>ul>li>a>button:hover{
 
 
 
-footer{
+footer {
     background-color: #004658;
     padding-bottom: 40px;
 }
+
 .footer-wave-svg {
     background-color: transparent;
     display: block;
@@ -184,57 +213,69 @@ footer{
     top: -1px;
     width: 100%;
 }
+
 .footer-wave-path {
     fill: #fffff2;
 }
-.main-footer{
+
+.main-footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px;   
+    gap: 100px;
     margin: 0px 15px 0px 25px;
     padding-top: 100px;
 }
-.main-footer>div{
+
+.main-footer>div {
     padding: 0 5px 20px 20px;
     min-height: 200px;
 }
-.first-footer-box{
+
+.first-footer-box {
     position: relative;
 }
-.first-footer-box>h3{
+
+.first-footer-box>h3 {
     text-align: center;
 }
-.first-footer-box-AutoTrack-description{
+
+.first-footer-box-AutoTrack-description {
     text-align: center;
     padding-top: 25px;
 }
-.first-footer-box-copyRight{
+
+.first-footer-box-copyRight {
     position: absolute;
     bottom: 0;
 }
-.second-footer-box{
+
+.second-footer-box {
     margin-left: 25%;
     margin-right: 25%;
 }
-.second-footer-box>h3{
+
+.second-footer-box>h3 {
     text-transform: uppercase;
 }
-.second-footer-box-sitemap{
+
+.second-footer-box-sitemap {
     padding: 0 0px 0 10px;
 }
-.second-footer-box-sitemap>ul>li{
+
+.second-footer-box-sitemap>ul>li {
     padding-top: 15px;
     list-style-type: circle;
     text-decoration: none;
-    
+
 }
 
-.second-footer-box-sitemap>ul>li>a{
+.second-footer-box-sitemap>ul>li>a {
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
-.second-footer-box-sitemap>ul>li>a:hover{
+
+.second-footer-box-sitemap>ul>li>a:hover {
     color: white;
     text-decoration: none;
     font-weight: 600;
