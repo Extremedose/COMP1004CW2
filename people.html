@@ -7,7 +7,8 @@
     <title>People Search | AutoTrack</title>
     <link rel="icon" type="image/x-icon" href="AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
-    <script src="/people.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="people.js" defer></script>
 </head>
 
 <body>
@@ -43,17 +44,17 @@
                 <form>
                     <p>Search By:</p><br>
 
-                    <input type="radio" id="search_by_name" name="search_option" value="name">
+                    <input type="radio" id="search_by_name" name="search_option" value="name" required>
                     <label for="search_by_name">Name</label><br><br>
     
-                    <input type="radio" id="search_by_licence_number" name="search_option" value="licence_number">
-                    <label for="search_by_licence_number">Licence Number</label><br><br>
+                    <input type="radio" id="search_by_license_number" name="search_option" value="license_number" required>
+                    <label for="search_by_license_number">License Number</label><br><br>
                     
                     <label for="search_input">Input:&nbsp;&nbsp;</label>
-                    <input type="text" id="search_input_text" name="search_option" required maxlength="50"/><br>
+                    <input type="text" class="search-bar-class" id="searchInputPeople" name="search_option" onkeypress="handleKeyPress(event)" required maxlength="50"/><br>
                     
                     
-                    <button type="button" onclick="filter()">Search</button>
+                    <button type="button" onclick="search()">Search</button>
 
                 </form>
             </div>
@@ -69,11 +70,11 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>DOB</th>
-                                <th>LicenseNumber</th>
+                                <th>License Number</th>
                                 <th>ExpiryDate</th>
                             </tr>
                         </thead>
-                        <tbody id="table_body">
+                        <tbody id="people-table_body">
                         </tbody>
                     </table>
                 </div>

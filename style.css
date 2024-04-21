@@ -94,7 +94,7 @@ nav>ul>li>a>button:hover{
 .search-people-form>form>label{
     font-size: 1.1em;
 }
-#search_input_text{
+.search-bar-class{
     width: 60%;
     height: 2em;
     font-size: 1.1em;
@@ -120,12 +120,6 @@ nav>ul>li>a>button:hover{
     border: 2px solid;
     cursor: pointer;
     transition: 0.18s ease-in;
-}
-.light-grey-row {
-    background-color: #cec9c9;
-}
-.white-row {
-    background-color: #ffffff;
 }
 .title-for-table-result{
     display: flex;
@@ -163,8 +157,11 @@ nav>ul>li>a>button:hover{
 .table>table>tbody>tr{
     height: 2em;
 }
-#vehicle-table_body{
-    height: auto;
+.table-to-display>.table>table>tbody>tr:nth-child(even){
+    background-color: #ffff;
+}
+.table-to-display>.table>table>tbody>tr:nth-child(odd){
+    background-color: #cec9c9;
 }
 
 

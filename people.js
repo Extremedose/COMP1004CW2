@@ -1,90 +1,84 @@
-function fetchAndParseCSV() {
-    fetch('coursework-database/People.csv')
-        .then(response => response.text())
-        .then(csv => {
-            const rows = csv.split('\n').slice(1);
-            const tableBody = document.getElementById('table_body');
+const { createClient } = supabase
+const _supabase = createClient('https://xjmheuyoyvjlgfpfwdqs.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhqbWhldXlveXZqbGdmcGZ3ZHFzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMjg1MjAzOCwiZXhwIjoyMDI4NDI4MDM4fQ.jbCXYQ_eSysm4rGi5WDKu4e1UUnsmfSBrbC5VPHfV1Q')
 
-            rows.forEach((row, index) => {
-                const cells = row.split(',');
-                const personID = cells[0];
-                const name = cells[1];
-                const address = cells[2];
-                const dob = cells[3];
-                const licenseNumber = cells[4];
-                const expiryDate = cells[5];
+async function loadData(searchInput = '', selectionName) {
 
-                const newRow = document.createElement('tr');
-                newRow.classList.add(index % 2 === 0 ? 'light-grey-row' : 'white-row');
+    try {
+        let { data, error } = await _supabase
+            .from('People')
+            .select('*')
+            .order('PersonID', { ascending: true });
+
+        let isInput;
+        for (let i = 0; i < searchInput.length; i++) {
+            if (searchInput.charAt(i) == ' ') {
+                isInput = 1;
+            } else {
+                isInput = 0;
+                break;
+            }
+        }
+        if (searchInput && isInput == 0 && selectionName) {
+
+            if(selectionName == "Name"){
+                data = data.filter(people => people.Name.toUpperCase().includes(searchInput.toUpperCase()));
+            }else if(selectionName == "LicenseNumber"){
+                data = data.filter(people => people.LicenseNumber.toUpperCase().includes(searchInput.toUpperCase()));
+            }
                 
-                const personIDCell = document.createElement('td');
-                personIDCell.textContent = personID;
-                const nameCell = document.createElement('td');
-                nameCell.textContent = name;
-                const addressCell = document.createElement('td');
-                addressCell.textContent = address;
-                const dobCell = document.createElement('td');
-                dobCell.textContent = dob;
-                const licenseNumberCell = document.createElement('td');
-                licenseNumberCell.textContent = licenseNumber;
-                const expiryDateCell = document.createElement('td');
-                expiryDateCell.textContent = expiryDate;
-
-                newRow.appendChild(personIDCell);
-                newRow.appendChild(nameCell);
-                newRow.appendChild(addressCell);
-                newRow.appendChild(dobCell);
-                newRow.appendChild(licenseNumberCell);
-                newRow.appendChild(expiryDateCell);
-
-                tableBody.appendChild(newRow);
-            });
-        })
-        .catch(error => console.error('Error fetching the CSV file:', error));
-}
-function filterByName() {
-    const searchInput = document.getElementById('search_input_text').value.toLowerCase();
-    const rows = document.querySelectorAll('#table_body tr');
-
-    rows.forEach(row => {
-        const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-        if (name.includes(searchInput)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
+            
         }
-    });
-}
-function filterByLicenseNumber() {
-    const searchInput = document.getElementById('search_input_text').value.toLowerCase();
-    const rows = document.querySelectorAll('#table_body tr');
 
-    rows.forEach(row => {
-        const licenseNumber = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
-        if (licenseNumber.includes(searchInput)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-}
 
-function filter() {
-    const option = document.getElementsByName("search_option");
-    let selectedOption = null;
+        const tableBody = document.getElementById('people-table_body');
+        tableBody.innerHTML = '';
 
-    for (let i = 0; i < option.length; i++) {
-        if (option[i].checked) {
-            selectedOption = option[i].value;
-            break;
-        }
-    }
-    if (selectedOption === 'name') {
-        filterByName();
-    } else if (selectedOption === 'licence_number') {
-        filterByLicenseNumber();
-    } else {
-        console.log("No option was selected");
+        data.forEach(people => {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+            <td>${people.PersonID || 'Not Known'}</td>
+            <td>${people.Name || 'Not Known'}</td>
+            <td>${people.Address || 'Not Known'}</td>
+            <td>${people.DOB || 'Not Known'}</td>
+            <td>${people.LicenseNumber || 'Not Known'}</td>
+            <td>${people.ExpiryDate || 'Not Known'}</td>
+          `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error.message);
     }
 }
-window.onload = fetchAndParseCSV;
+async function search() {
+    try {
+        const searchInput = document.getElementById('searchInputPeople').value.trim();
+        const option = document.getElementsByName("search_option");
+        let selectedOption = null;
+        for (let i = 0; i < option.length; i++) {
+            if (option[i].checked) {
+                selectedOption = option[i].value;
+                break;
+            }
+        }
+        if (selectedOption === 'name') {
+            await loadData(searchInput, 'Name');
+
+        } else if (selectedOption === 'license_number') {
+            await loadData(searchInput, 'LicenseNumber');
+
+        } else {
+            await loadData();
+        }
+
+    } catch (error) {
+        console.error('Error fetching data:', error.message);
+    }
+}
+async function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        await search();
+    }
+  }
+window.onload = loadData;
