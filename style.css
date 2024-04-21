@@ -192,6 +192,14 @@ nav>ul>li>a>button:hover {
     background-color: #cec9c9;
 }
 
+.no-data-found{
+    text-align: center;
+    background-color: #ffff;
+    color: #000;
+    font-weight: 600;
+    height: 3em;
+    font-size: 1.1em;
+}
 
 
 

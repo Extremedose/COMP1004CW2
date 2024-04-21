@@ -37,7 +37,18 @@ async function loadData(searchInput = '') {
         <td>${vehicle.Colour || 'Not Known'}</td>
       `;
       tableBody.appendChild(row);
+
+
     });
+    if (data.length == 0) {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.setAttribute('colspan', '6');
+      cell.classList.add('no-data-found');
+      cell.textContent = 'Vehicle registration not found';
+      row.appendChild(cell);
+      tableBody.appendChild(row);
+    }
   } catch (error) {
     console.error('Error fetching data:', error.message);
   }
