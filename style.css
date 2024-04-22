@@ -201,6 +201,7 @@ input {
 
 .form-box-add-vehicle-inputs input:nth-child(2) {
     grid-row: 2;
+
 }
 
 .form-box-add-vehicle-inputs input:nth-child(3) {
