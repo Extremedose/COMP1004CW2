@@ -19,7 +19,7 @@
             <a href="index.html" target="_blank"><img src="images/AutoTrack-Logo.png" alt="Logo for AutoTrack"></a>
             <h1>AutoTrack</h1>
         </div>
-        
+
     </header>
 
     <main>
@@ -37,24 +37,59 @@
 
         <div class="main-body">
             <h1>Add Vehicle</h1>
+            <div class="search-people-form">
+                <form>
+                    <p>Add Vehicle:</p><br>
 
+                    <div class="form-box-add-vehicle">
+
+                        <div class="form-box-add-vehicle-labels">
+                            <label for="name" class="add-vehicle-form-label">Name:</label>
+                            <label for="licenceNumber" class="add-vehicle-form-label">Licnese Number:</label>
+                            <label for="vehicleRegistration" class="add-vehicle-form-label">Vehicle Registration:</label>
+                            <label for="make" class="add-vehicle-form-label">Make:</label>
+                            <label for="model" class="add-vehicle-form-label">Model:</label>
+                            <label for="colour" class="add-vehicle-form-label">Colour:</label>
+                        </div>
+
+                        <div class="form-box-add-vehicle-inputs">
+                            
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-name" name="name" list="search-suggestions-name" required maxlength="50" />
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-licenseNumber" name="licenseNumber" list="search-suggestions-licenseNumber" required maxlength="50" />
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-vehicle-registration" name="vehicleRegistraion" required maxlength="50" />
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-make" name="make" required maxlength="50" />
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-model" name="model" required maxlength="50" />
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-colour" name="colour" required maxlength="50" />
+                        </div>
+                        <datalist id="search-suggestions-name"></datalist>
+                        <datalist id="search-suggestions-licenseNumber"></datalist>
+
+                    </div>
+
+                    <button type="button">Search</button>
+                </form>
+
+            </div>
         </div>
-
     </main>
 
     <footer>
         <svg class="footer-wave-svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
-          </svg>
+            <path class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+            </path>
+        </svg>
         <div class="main-footer">
-            
+
             <div class="first-footer-box">
                 <h3>AutoTrack</h3>
                 <div class="first-footer-box-AutoTrack-description">
-                    <span>AutoTrack is the agency that is responsible for comprehensive database management for driving license information, vehicle registrations and monitoring.</span>
+                    <span>AutoTrack is the agency that is responsible for comprehensive database management for driving
+                        license information, vehicle registrations and monitoring.</span>
                 </div>
                 <div class="first-footer-box-copyRight">
-                    <span>&copy; Copyright 2024 by Ayman A. All Rights Reserved. This website is powered by HTML, CSS, JavaScript and SQL .</span>
+                    <span>&copy; Copyright 2024 by Ayman A. All Rights Reserved. This website is powered by HTML, CSS,
+                        JavaScript and SQL .</span>
                 </div>
             </div>
 
@@ -73,6 +108,5 @@
         </div>
     </footer>
 </body>
+
 </html>
-
-
