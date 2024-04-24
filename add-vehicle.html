@@ -39,37 +39,69 @@
             <h1>Add Vehicle</h1>
             <div class="search-people-form">
                 <form>
-                    <p>Add Vehicle:</p><br>
 
                     <div class="form-box-add-vehicle">
 
-                        <div class="form-box-add-vehicle-labels">
-                            <label for="name" class="add-vehicle-form-label">Name:</label>
-                            <label for="licenceNumber" class="add-vehicle-form-label">Licnese Number:</label>
-                            <label for="vehicleRegistration" class="add-vehicle-form-label">Vehicle Registration:</label>
-                            <label for="make" class="add-vehicle-form-label">Make:</label>
-                            <label for="model" class="add-vehicle-form-label">Model:</label>
-                            <label for="colour" class="add-vehicle-form-label">Colour:</label>
+                        <div class="form-box-add-vehicle-item1">
+                            <label for="name" class="add-vehicle-form-label">Name</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-name"
+                                name="name" list="search-suggestions-name" required maxlength="50" />
+                            <div class="dropdown-options" id="dropdownOptions">
+                                <ul></ul>
+                            </div>
                         </div>
 
-                        <div class="form-box-add-vehicle-inputs">
-                            
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-name" name="name" list="search-suggestions-name" required maxlength="50" />
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-licenseNumber" name="licenseNumber" list="search-suggestions-licenseNumber" required maxlength="50" />
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-vehicle-registration" name="vehicleRegistraion" required maxlength="50" />
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-make" name="make" required maxlength="50" />
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-model" name="model" required maxlength="50" />
-                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-colour" name="colour" required maxlength="50" />
+                        <div class="form-box-add-vehicle-item2">
+                            <label for="address" class="add-vehicle-form-label">Address</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-address"
+                                name="address" required maxlength="50" />
                         </div>
+                        <div class="form-box-add-vehicle-item3">
+                            <label for="dob" class="add-vehicle-form-label">Date Of Birth</label>
+                            <input type="date" class="search-bar-class" id="form-box-add-vehicle-inputs-dob" name="dob"
+                                required maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item4">
+                            <label for="licenceNumber" class="add-vehicle-form-label">Licnese Number</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-licenseNumber"
+                                name="licenseNumber" list="search-suggestions-licenseNumber" required maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item5">
+                            <label for="expiryDate" class="add-vehicle-form-label">Expiry Date</label>
+                            <input type="date" class="search-bar-class" id="form-box-add-vehicle-inputs-expiryDate"
+                                name="expiryDate" required maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item6">
+                            <label for="vehicleRegistration" class="add-vehicle-form-label">Vehicle Registration</label>
+                            <input type="text" class="search-bar-class"
+                                id="form-box-add-vehicle-inputs-vehicleRegistration" name="vehicleRegistraion" required
+                                maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item7">
+                            <label for="make" class="add-vehicle-form-label">Make</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-make"
+                                name="make" required maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item8">
+                            <label for="model" class="add-vehicle-form-label">Model</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-model"
+                                name="model" required maxlength="50" />
+                        </div>
+                        <div class="form-box-add-vehicle-item9">
+                            <label for="colour" class="add-vehicle-form-label">Colour</label>
+                            <input type="text" class="search-bar-class" id="form-box-add-vehicle-inputs-colour"
+                                name="colour" required maxlength="50" />
+                        </div>
+
                         <datalist id="search-suggestions-name"></datalist>
                         <datalist id="search-suggestions-licenseNumber"></datalist>
-                        
 
-                        
+
+
 
                     </div>
 
-                    <button type="button">Search</button>
+                    <button type="button" onclick="sanityCheck()">Add </button>
                 </form>
 
             </div>

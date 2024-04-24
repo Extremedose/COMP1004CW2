@@ -113,21 +113,65 @@ nav>ul>li>a>button:hover {
 }
 
 .add-vehicle-form-label {
-    font-size: 1.1em;
-}
-
-input {
-    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
 .search-bar-class {
     width: 60%;
-    height: 2em;
+    height: 2.25em;
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     border-radius: 0.3em;
-    border: 2px solid #000;
+    margin-top: 0.5em;
+    border: 0.5px solid grey;
+    border: 2px solid transparent;
+    margin-bottom: 1em;
 }
+
+.search-bar-class:focus{
+    border: 2px solid black;
+    outline: none;
+}
+
+.search-bar-class:focus {
+    border: 2px solid black;
+    outline: none;
+}
+.form-box-add-vehicle-item1 {
+    position: relative;
+}
+
+#dropdownOptions {
+    position: absolute;
+    top: calc(100% + 0.5em);
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+
+}
+
+.dropdown-option {
+    padding: 8px 12px 8px 0;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f2f2f2;
+}
+
+#dropdownOptions > ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+#dropdownOptions > ul > li {
+    color: #000;
+}
+
+
 
 .search-people-form>form>button {
     margin-top: 2em;
@@ -151,74 +195,21 @@ input {
 
 .form-box-add-vehicle {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 1em;
+    padding-top: 3em;
 }
 
-.form-box-add-vehicle-labels {
-    grid-column: 1;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    align-items: center;
+.form-box-add-vehicle div {
+    display: flex;
+    flex-direction: column;
 }
 
-.form-box-add-vehicle-labels label {
-    text-align: right;
-    height: 2em;
+.form-box-add-vehicle div input {
+    width: 90%;
 }
 
-.form-box-add-vehicle-labels label:nth-child(1) {
-    grid-row: 1;
-}
-
-.form-box-add-vehicle-labels label:nth-child(2) {
-    grid-row: 2;
-}
-
-.form-box-add-vehicle-labels label:nth-child(3) {
-    grid-row: 3;
-}
-
-.form-box-add-vehicle-labels label:nth-child(4) {
-    grid-row: 4;
-}
-
-.form-box-add-vehicle-labels label:nth-child(5) {
-    grid-row: 5;
-}
-
-.form-box-add-vehicle-inputs {
-    grid-column: 2/6;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-}
-
-.form-box-add-vehicle-inputs input:nth-child(1) {
-    grid-row: 1;
-}
-
-.form-box-add-vehicle-inputs input:nth-child(2) {
-    grid-row: 2;
-
-}
-
-.form-box-add-vehicle-inputs input:nth-child(3) {
-    grid-row: 3;
-}
-
-.form-box-add-vehicle-inputs input:nth-child(4) {
-    grid-row: 4;
-}
-
-.form-box-add-vehicle-inputs input:nth-child(5) {
-    grid-row: 5;
-}
-
-.form-box-add-vehicle-inputs input:nth-child(6) {
-    grid-row: 6;
-}
 
 
 

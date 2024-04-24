@@ -2,102 +2,135 @@ const { createClient } = supabase
 const _supabase = createClient('https://xjmheuyoyvjlgfpfwdqs.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhqbWhldXlveXZqbGdmcGZ3ZHFzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMjg1MjAzOCwiZXhwIjoyMDI4NDI4MDM4fQ.jbCXYQ_eSysm4rGi5WDKu4e1UUnsmfSBrbC5VPHfV1Q')
 
 
-async function getListOfName() {
+const addName = document.getElementById('form-box-add-vehicle-inputs-name').value;
+const addAddress = document.getElementById('form-box-add-vehicle-inputs-address').value.charAt(0).toUpperCase() + document.getElementById('form-box-add-vehicle-inputs-address').value.slice(1).toLowerCase();
+const addLicenseNumber = document.getElementById('form-box-add-vehicle-inputs-licenseNumber').value;
+const addVehicleRegistration = document.getElementById('form-box-add-vehicle-inputs-vehicleRegistration').value.toUpperCase();
+const addDOB = document.getElementById('form-box-add-vehicle-inputs-dob').value;
+const addMake = document.getElementById('form-box-add-vehicle-inputs-make').value.charAt(0).toUpperCase() + document.getElementById('form-box-add-vehicle-inputs-make').value.slice(1).toLowerCase();
+const addModel = document.getElementById('form-box-add-vehicle-inputs-model').value;
+const addColour = document.getElementById('form-box-add-vehicle-inputs-colour').value.charAt(0).toUpperCase() + document.getElementById('form-box-add-vehicle-inputs-colour').value.slice(1).toLowerCase();
+const addExpiryDate = document.getElementById('form-box-add-vehicle-inputs-expiryDate').value;
+
+async function fetchOptions() {
     try {
-        let { data, error } = await _supabase
+        const { data, error } = await _supabase
             .from('People')
-            .select('Name')
-            .order('Name', { ascending: true });
+            .select('*')
+            .order('PersonID', { ascending: true });
+        if (error) {
+            throw error;
+        }
+        return data;
+    } catch (error) {
+        console.error('Error fetching options:', error.message);
+        return [];
+    }
+}
 
-        const datalist = document.getElementById('search-suggestions-name');
-        datalist.innerHTML = '';
 
-        if (data) {
-            data.forEach(name => {
-                const option = document.createElement('option');
-                option.value = name.Name;
-                datalist.appendChild(option);
+
+async function sanityCheck() {
+
+    try {
+        const dataToCheck = addDOB.split("-");
+        console.log(dataToCheck[0]);
+        console.log(dataToCheck[1]);
+        console.log(dataToCheck[2]);
+
+        const today = new Date();
+
+        if (dataToCheck[0] > today.getFullYear() || dataToCheck[0] == today.getFullYear() && dataToCheck[1] > (today.getMonth() + 1) || dataToCheck[0] == today.getFullYear() && dataToCheck[1] == (today.getMonth() + 1) && dataToCheck[2] > today.getDate()) {
+            alert("Error: invalid Date of Birth");
+            return;
+        }
+    } catch {
+    }
+
+}
+
+async function search() {
+    const searchInput = document.getElementById("form-box-add-vehicle-inputs-name").value.toLowerCase();
+
+    const data = await fetchOptions();
+    const filteredData = data.filter(option => {
+        const name = option[Object.keys(option)[1]].toLowerCase();
+        return name.includes(searchInput);
+    });
+
+    const dropdownOptions = document.getElementById("dropdownOptions").querySelector("ul");
+    dropdownOptions.innerHTML = ""; // Clear previous options
+
+    if (searchInput && filteredData.length > 0) {
+        filteredData.forEach(option => {
+            const optionElement = document.createElement("li");
+            optionElement.textContent = option[Object.keys(option)[1]];
+            optionElement.classList.add("dropdown-option");
+
+            optionElement.addEventListener("click", () => {
+                console.log("Clicked:", option[Object.keys(option)[1]]);
+                document.getElementById("form-box-add-vehicle-inputs-name").value = option[Object.keys(option)[1]];
+                dropdownOptions.innerHTML = "";
             });
-        }
 
-    } catch (error) {
-        console.error('Error fetching data:', error.message);
+            dropdownOptions.appendChild(optionElement);
+        });
+    } else {
+        const message = document.createElement("li");
+        message.textContent = "No suggestions found";
+        message.classList.add("dropdown-message");
+        dropdownOptions.appendChild(message);
     }
 }
 
-async function getListOfLicenseNumber() {
-    try {
-        let { data, error } = await _supabase
-            .from('People')
-            .select('LicenseNumber')
-            .order('LicenseNumber', { ascending: true });
 
-        const datalist = document.getElementById('search-suggestions-licenseNumber');
-        datalist.innerHTML = '';
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("form-box-add-vehicle-inputs-name");
+    const dropdownOptions = document.getElementById("dropdownOptions").querySelector("ul");
 
-        if (data) {
-            data.forEach(person => {
-                const option = document.createElement('option');
-                option.value = person.LicenseNumber;
-                datalist.appendChild(option);
+    searchInput.addEventListener("input", async () => {
+        const searchInputValue = searchInput.value.toLowerCase();
+
+        const data = await fetchOptions();
+        const filteredData = data.filter(option => {
+            const name = option[Object.keys(option)[1]].toLowerCase();
+            return name.includes(searchInputValue);
+        });
+
+        dropdownOptions.innerHTML = ""; // Clear previous options
+
+        if (searchInputValue && filteredData.length > 0) {
+            filteredData.forEach(option => {
+                const optionElement = document.createElement("li");
+                optionElement.textContent = option[Object.keys(option)[1]];
+                optionElement.classList.add("dropdown-option");
+
+                optionElement.addEventListener("click", () => {
+                    console.log("Clicked:", option[Object.keys(option)[1]]);
+                    searchInput.value = option[Object.keys(option)[1]];
+                    dropdownOptions.innerHTML = "";
+                });
+
+                dropdownOptions.appendChild(optionElement);
             });
+            document.getElementById("dropdownOptions").style.display = "block";
+        } else {
+            const message = document.createElement("li");
+            message.textContent = "No suggestions found";
+            message.classList.add("dropdown-message");
+            dropdownOptions.appendChild(message);
+            document.getElementById("dropdownOptions").style.display = "none";
         }
+    });
 
-    } catch (error) {
-        console.error('Error fetching data:', error.message);
-    }
-}
-
-async function nameToLicenseFill(name) {
-    try {
-        let { data, error } = await _supabase
-            .from('People')
-            .select('LicenseNumber')
-            .eq('Name', name)
-
-        const correspondinglicenseNumber = data.map(index => index.LicenseNumber);
-
-        if (correspondinglicenseNumber) {
-            const licenseNumber = document.getElementById('form-box-add-vehicle-inputs-licenseNumber');
-            licenseNumber.value = correspondinglicenseNumber;
+    // Hide dropdown when clicked outside of input or dropdown
+    document.addEventListener("click", (event) => {
+        if (!searchInput.contains(event.target) && !dropdownOptions.contains(event.target)) {
+            dropdownOptions.innerHTML = "";
+            document.getElementById("dropdownOptions").style.display = "none";
         }
-    } catch (error) {
+    });
 
-    }
-}
-
-async function licenseToNameFill(licenseNumber){
-    try {
-        let { data, error } = await _supabase
-            .from('People')
-            .select('Name')
-            .eq('LicenseNumber', licenseNumber)
-
-        const correspondingName = data.map(index => index.Name);
-        if (correspondingName) {
-            const name = document.getElementById('form-box-add-vehicle-inputs-name');
-            name.value = correspondingName;
-        }
-    } catch (error) {
-
-    }
-}
-
-const inputFieldName = document.getElementById('form-box-add-vehicle-inputs-name');
-inputFieldName.addEventListener('input', function () {
-    if (this.value != '') {
-        nameToLicenseFill(this.value);
-    }
+    // Hide dropdown when the page loads
+    document.getElementById("dropdownOptions").style.display = "none";
 });
-
-const inputFieldlicense = document.getElementById('form-box-add-vehicle-inputs-licenseNumber');
-inputFieldlicense.addEventListener('input', function () {
-    if (this.value != '') {
-        licenseToNameFill(this.value);
-    }
-});
-
-
-getListOfName();
-getListOfLicenseNumber();
-
