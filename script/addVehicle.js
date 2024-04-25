@@ -41,7 +41,6 @@ async function sanityCheck() {
     } else {
         addColour = addColour.charAt(0).toUpperCase() + addColour.slice(1).toLowerCase();
     }
-
     if (addAddress == "") {
         alert("Missing input for Address");
         return;
