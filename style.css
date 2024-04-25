@@ -203,7 +203,7 @@ nav>ul>li>a>button:hover {
 .form-box-add-vehicle div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .form-box-add-vehicle div input {
@@ -214,6 +214,8 @@ div small{
     visibility: hidden;
     color: red;
     font-weight: 600;
+    display: block;
+    height: 1.5em; 
 }
 
 

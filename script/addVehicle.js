@@ -41,36 +41,84 @@ async function sanityCheck() {
     } else {
         addColour = addColour.charAt(0).toUpperCase() + addColour.slice(1).toLowerCase();
     }
-    if (addAddress == "") {
-        alert("Missing input for Address");
-        return;
+    
+    var smallElement1 = document.querySelector('.form-box-add-vehicle-item1 small');
+    var smallElement2 = document.querySelector('.form-box-add-vehicle-item2 small');
+    var smallElement3 = document.querySelector('.form-box-add-vehicle-item3 small');
+    var smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
+    var smallElement5 = document.querySelector('.form-box-add-vehicle-item5 small');
+    var smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
+    var smallElement7 = document.querySelector('.form-box-add-vehicle-item7 small');
+    var smallElement8 = document.querySelector('.form-box-add-vehicle-item8 small');
+    var smallElement9 = document.querySelector('.form-box-add-vehicle-item9 small');
+
+    let errors = 0;
+
+    if (addName === "") {
+        smallElement1.textContent = "Name is required";
+        smallElement1.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement1.style.visibility = "hidden";
     }
-    if (addDOB == "") {
-        alert("Missing input for Date Of Birth");
-        return;
+    if (addAddress === "") {
+        smallElement2.textContent = "Address is required";
+        smallElement2.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement2.style.visibility = "hidden";
     }
-    if (addLicenseNumber == "") {
-        alert("Missing input for Licence Number");
-        return;
+    if (addDOB === "") {
+        smallElement3.textContent = "Date of Birth is required";
+        smallElement3.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement3.style.visibility = "hidden";
     }
-    if (addExpiryDate == "") {
-        alert("Missing input for Expiry Date");
-        return;
+    if (addLicenseNumber === "") {
+        smallElement4.textContent = "License Number is required";
+        smallElement4.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement4.style.visibility = "hidden";
     }
-    if (addVehicleRegistration == "") {
-        alert("Missing input for Vehicle Registration");
-        return;
+    if (addExpiryDate === "") {
+        smallElement5.textContent = "Expiry Date is required";
+        smallElement5.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement5.style.visibility = "hidden";
     }
-    if (addMake == "") {
-        alert("Missing input for Make");
-        return;
+    if (addVehicleRegistration === "") {
+        smallElement6.textContent = "Vehicle Registration is required";
+        smallElement6.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement6.style.visibility = "hidden";
     }
-    if (addModel == "") {
-        alert("Missing input for Model");
-        return;
+    if (addMake === "") {
+        smallElement7.textContent = "Make is required";
+        smallElement7.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement7.style.visibility = "hidden";
     }
-    if (addColour == "") {
-        alert("Missing input for Colour");
+    if (addModel === "") {
+        smallElement8.textContent = "Model is required";
+        smallElement8.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement8.style.visibility = "hidden";
+    }
+    if (addColour === "") {
+        smallElement9.textContent = "Colour is required";
+        smallElement9.style.visibility = "visible";
+        errors++;
+    } else {
+        smallElement9.style.visibility = "hidden";
+    }
+
+    if(errors){
         return;
     }
 
