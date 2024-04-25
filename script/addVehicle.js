@@ -42,83 +42,83 @@ async function sanityCheck() {
     const dataToCheck = addDOB.split("-");
     const today = new Date();
 
-    let smallElement1 = document.querySelector('.form-box-add-vehicle-item1 small');
-    let smallElement2 = document.querySelector('.form-box-add-vehicle-item2 small');
-    let smallElement3 = document.querySelector('.form-box-add-vehicle-item3 small');
-    let smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
-    let smallElement5 = document.querySelector('.form-box-add-vehicle-item5 small');
-    let smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
-    let smallElement7 = document.querySelector('.form-box-add-vehicle-item7 small');
-    let smallElement8 = document.querySelector('.form-box-add-vehicle-item8 small');
-    let smallElement9 = document.querySelector('.form-box-add-vehicle-item9 small');
-
     let errors = 0;
     if (addName === "") {
-        smallElement1.textContent = "Name is required";
-        smallElement1.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item1 small').textContent = "Name is required";
+        document.querySelector('.form-box-add-vehicle-item1 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-name').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement1.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item1 small').style.visibility = "hidden";
     }
     if (addAddress === "") {
-        smallElement2.textContent = "Address is required";
-        smallElement2.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item2 small').textContent = "Address is required";
+        document.querySelector('.form-box-add-vehicle-item2 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-address').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement2.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item2 small').style.visibility = "hidden";
     }
     if (addDOB === "") {
-        smallElement3.textContent = "Date of Birth is required";
-        smallElement3.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item3 small').textContent = "Date of Birth is required";
+        document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-dob').style.border = "Solid Red 2px";
         errors++;
     } else if (dataToCheck[0] > today.getFullYear() || dataToCheck[0] == today.getFullYear() && dataToCheck[1] > (today.getMonth() + 1) || dataToCheck[0] == today.getFullYear() && dataToCheck[1] == (today.getMonth() + 1) && dataToCheck[2] > today.getDate()) {
-        smallElement3.textContent = "Invalid Date";
-        smallElement3.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item3 small').textContent = "Invalid Date";
+        document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-dob').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement3.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "hidden";
     }
     if (addLicenseNumber === "") {
-        smallElement4.textContent = "License Number is required";
-        smallElement4.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item4 small').textContent = "License Number is required";
+        document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-licenseNumber').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement4.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "hidden";
     }
     if (addExpiryDate === "") {
-        smallElement5.textContent = "Expiry Date is required";
-        smallElement5.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item5 small').textContent = "Expiry Date is required";
+        document.querySelector('.form-box-add-vehicle-item5 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-expiryDate').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement5.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item5 small').style.visibility = "hidden";
     }
     if (addVehicleRegistration === "") {
-        smallElement6.textContent = "Vehicle Registration is required";
-        smallElement6.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item6 small').textContent = "Vehicle Registration is required";
+        document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-vehicleRegistration').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement6.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "hidden";
     }
     if (addMake === "") {
-        smallElement7.textContent = "Make is required";
-        smallElement7.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item7 small').textContent = "Make is required";
+        document.querySelector('.form-box-add-vehicle-item7 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-make').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement7.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item7 small').style.visibility = "hidden";
     }
     if (addModel === "") {
-        smallElement8.textContent = "Model is required";
-        smallElement8.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item8 small').textContent = "Model is required";
+        document.querySelector('.form-box-add-vehicle-item8 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-model').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement8.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item8 small').style.visibility = "hidden";
     }
     if (addColour === "") {
-        smallElement9.textContent = "Colour is required";
-        smallElement9.style.visibility = "visible";
+        document.querySelector('.form-box-add-vehicle-item9 small').textContent = "Colour is required";
+        document.querySelector('.form-box-add-vehicle-item9 small').style.visibility = "visible";
+        document.querySelector('#form-box-add-vehicle-inputs-colour').style.border = "Solid Red 2px";
         errors++;
     } else {
-        smallElement9.style.visibility = "hidden";
+        document.querySelector('.form-box-add-vehicle-item9 small').style.visibility = "hidden";
     }
     if (errors) {
         return;
@@ -158,13 +158,12 @@ async function insertPerson(newPersonID, newName, newAddress, newLicenseNumber, 
         if (error) {
             throw error;
         }
-        let smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
         if (data.length > 0) {
-            smallElement4.textContent = "License Number is already registered under a different person";
-            smallElement4.style.visibility = "visible";
+            document.querySelector('.form-box-add-vehicle-item4 small').textContent = "License Number is already registered under a different person";
+            document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "visible";
             return;
         } else {
-            smallElement4.style.visibility = "hidden";
+            document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "hidden";
         }
         const { data: insertedData, error: insertError } = await _supabase
             .from('People')
@@ -197,13 +196,12 @@ async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel,
         if (error) {
             throw error;
         }
-        let smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
         if (data.length > 0) {
-            smallElement6.textContent = "Vehicle Registration is already registered under a different vehicle";
-            smallElement6.style.visibility = "visible";
+            document.querySelector('.form-box-add-vehicle-item6 small').textContent = "Vehicle Registration is already registered under a different vehicle";
+            document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "visible";
             return;
         } else {
-            smallElement6.style.visibility = "hidden";
+            document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "hidden";
         }
         const { data: insertedData, error: insertError } = await _supabase
             .from('Vehicle')
@@ -220,11 +218,46 @@ async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel,
             throw insertError;
         }
         console.log("Vehicle added successfully", insertedData);
+        document.getElementById('success-message').style.visibility = 'visible';
+        setTimeout(function () {
+            document.getElementById('success-message').style.visibility = 'hidden';
+            clearForm();
+        }, 3000);
+
+    
     } catch (error) {
         console.error('Error inserting data:', error.message);
     }
 }
+function clearForm() {
+    document.getElementById('form-box-add-vehicle-inputs-name').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-address').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-licenseNumber').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-vehicleRegistration').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-dob').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-make').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-model').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-expiryDate').value = '';
+    document.getElementById('form-box-add-vehicle-inputs-colour').value = '';
 
+    document.querySelectorAll('.form-box-add-vehicle-item small').forEach(function (error) {
+        error.textContent = '';
+        error.style.visibility = 'hidden';
+    });
+    document.querySelectorAll('#form-box-add-vehicle-inputs-name,\
+                            #form-box-add-vehicle-inputs-address,\
+                            #form-box-add-vehicle-inputs-licenseNumber,\
+                            #form-box-add-vehicle-inputs-vehicleRegistration,\
+                            #form-box-add-vehicle-inputs-dob,\
+                            #form-box-add-vehicle-inputs-make,\
+                            #form-box-add-vehicle-inputs-model,\
+                            #form-box-add-vehicle-inputs-expiryDate,\
+                            #form-box-add-vehicle-inputs-colour'
+    ).forEach(function (input) {
+
+        input.style.border = '';
+    });
+}
 async function search() {
     const searchInput = document.getElementById("form-box-add-vehicle-inputs-name").value.toLowerCase();
     const data = await fetchOptions();

@@ -215,10 +215,6 @@ div small{
     height: 1.5em; 
 }
 
-
-
-
-
 .title-for-table-result {
     display: flex;
     justify-content: center;
@@ -278,7 +274,14 @@ div small{
     height: 3em;
     font-size: 1.1em;
 }
-
+#success-message{
+    display: block;
+    margin-top: 2em;
+    color: darkgreen;
+    font-weight: 700;
+    font-size: 1.1em;
+    visibility: hidden;
+}
 
 
 
