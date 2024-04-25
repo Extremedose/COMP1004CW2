@@ -173,19 +173,16 @@ nav>ul>li>a>button:hover {
 
 
 .search-people-form>form>button {
-    margin-top: 2em;
-    padding: 0.4em 1.8em 0.4em 1.8em;
-    font-size: 1em;
+    margin-top: 0.5em;
+    padding: 0.55em 3em 0.55em 3em;
+    font-size: 1.1em;
     font-weight: 700;
     border-radius: 0.5em;
     border: 2px transparent solid;
+    display: block;
 }
 
 .search-people-form>form>button:hover {
-    margin-top: 2em;
-    padding: 0.4em 1.8em 0.4em 1.8em;
-    font-size: 1em;
-    font-weight: 700;
     border-radius: 0.5em;
     border: 2px solid;
     cursor: pointer;

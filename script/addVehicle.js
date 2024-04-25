@@ -16,9 +16,7 @@ async function fetchOptions() {
         return [];
     }
 }
-
 async function sanityCheck() {
-
     const addNameInput = document.getElementById('form-box-add-vehicle-inputs-name');
     let addName = addNameInput.value.trim();
     if (addName.includes(' ')) {
@@ -41,7 +39,9 @@ async function sanityCheck() {
     } else {
         addColour = addColour.charAt(0).toUpperCase() + addColour.slice(1).toLowerCase();
     }
-    
+    const dataToCheck = addDOB.split("-");
+    const today = new Date();
+
     let smallElement1 = document.querySelector('.form-box-add-vehicle-item1 small');
     let smallElement2 = document.querySelector('.form-box-add-vehicle-item2 small');
     let smallElement3 = document.querySelector('.form-box-add-vehicle-item3 small');
@@ -53,7 +53,6 @@ async function sanityCheck() {
     let smallElement9 = document.querySelector('.form-box-add-vehicle-item9 small');
 
     let errors = 0;
-
     if (addName === "") {
         smallElement1.textContent = "Name is required";
         smallElement1.style.visibility = "visible";
@@ -70,6 +69,10 @@ async function sanityCheck() {
     }
     if (addDOB === "") {
         smallElement3.textContent = "Date of Birth is required";
+        smallElement3.style.visibility = "visible";
+        errors++;
+    } else if (dataToCheck[0] > today.getFullYear() || dataToCheck[0] == today.getFullYear() && dataToCheck[1] > (today.getMonth() + 1) || dataToCheck[0] == today.getFullYear() && dataToCheck[1] == (today.getMonth() + 1) && dataToCheck[2] > today.getDate()) {
+        smallElement3.textContent = "Invalid Date";
         smallElement3.style.visibility = "visible";
         errors++;
     } else {
@@ -117,71 +120,52 @@ async function sanityCheck() {
     } else {
         smallElement9.style.visibility = "hidden";
     }
-
-    if(errors){
+    if (errors) {
         return;
     }
-
     try {
-        const dataToCheck = addDOB.split("-");
-        const today = new Date();
-
-        if (dataToCheck[0] > today.getFullYear() || dataToCheck[0] == today.getFullYear() && dataToCheck[1] > (today.getMonth() + 1) || dataToCheck[0] == today.getFullYear() && dataToCheck[1] == (today.getMonth() + 1) && dataToCheck[2] > today.getDate()) {
-            alert("Error: invalid Date of Birth");
-            return;
-        }
-
         const data = await fetchOptions();
-
         let nextPersonID = 0;
         let personExists = 0;
         let selectedPersonID;
-
         const matchingRow = data.filter(row => {
-
             if (row.PersonID > nextPersonID) {
                 nextPersonID = row.PersonID;
             }
-
             if (row.Name === addName && row.Address === addAddress && row.DOB === addDOB &&
                 row.LicenseNumber === addLicenseNumber && row.ExpiryDate === addExpiryDate) {
 
                 personExists = 1;
                 selectedPersonID = row.PersonID;
-
             }
         });
         nextPersonID = nextPersonID + 1;
-
         if (personExists) {
             insertVehicle(selectedPersonID, addVehicleRegistration, addMake, addModel, addColour);
 
         } else {
             insertPerson(nextPersonID, addName, addAddress, addLicenseNumber, addDOB, addExpiryDate, addVehicleRegistration, addMake, addModel, addColour);
         }
-
     } catch {
     }
-
 }
-
 async function insertPerson(newPersonID, newName, newAddress, newLicenseNumber, newDOB, newExpiryDate, newVehicleRegistration, newMake, newModel, newColour) {
-
     try {
         const { data, error } = await _supabase
             .from('People')
             .select('*')
             .filter('LicenseNumber', 'eq', newLicenseNumber);
-
         if (error) {
             throw error;
         }
-
+        let smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
         if (data.length > 0) {
-            alert("License Number is already registered under a different person");
+            smallElement4.textContent = "License Number is already registered under a different person";
+            smallElement4.style.visibility = "visible";
             return;
+        } else {
+            smallElement4.style.visibility = "hidden";
         }
-
         const { data: insertedData, error: insertError } = await _supabase
             .from('People')
             .insert([
@@ -202,11 +186,8 @@ async function insertPerson(newPersonID, newName, newAddress, newLicenseNumber, 
         console.error('Error inserting data:', error.message);
     }
     insertVehicle(newPersonID, newVehicleRegistration, newMake, newModel, newColour);
-
 }
-
 async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel, newColour) {
-
     try {
         const { data, error } = await _supabase
             .from('Vehicle')
@@ -216,12 +197,14 @@ async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel,
         if (error) {
             throw error;
         }
-
+        let smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
         if (data.length > 0) {
-            alert("Vehicle Registration is already registered under a different vehicle");
+            smallElement6.textContent = "Vehicle Registration is already registered under a different vehicle";
+            smallElement6.style.visibility = "visible";
             return;
+        } else {
+            smallElement6.style.visibility = "hidden";
         }
-
         const { data: insertedData, error: insertError } = await _supabase
             .from('Vehicle')
             .insert([
@@ -240,12 +223,10 @@ async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel,
     } catch (error) {
         console.error('Error inserting data:', error.message);
     }
-
 }
 
 async function search() {
     const searchInput = document.getElementById("form-box-add-vehicle-inputs-name").value.toLowerCase();
-
     const data = await fetchOptions();
     const filteredData = data.filter(option => {
         const name = option[Object.keys(option)[1]].toLowerCase();
@@ -254,16 +235,11 @@ async function search() {
 
     const dropdownOptions = document.getElementById("dropdownOptions").querySelector("ul");
     dropdownOptions.innerHTML = "";
-
-
 }
 
 async function populateForm(selectedName) {
-
     const data = await fetchOptions();
-
     const matchingRow = data.filter(row => row.Name === selectedName);
-
     matchingRow.forEach(row => {
         document.getElementById('form-box-add-vehicle-inputs-address').value = row.Address;
         document.getElementById('form-box-add-vehicle-inputs-dob').value = row.DOB;
@@ -284,9 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const name = option[Object.keys(option)[1]].toLowerCase();
             return name.includes(searchInputValue);
         });
-
         dropdownOptions.innerHTML = "";
-
         if (searchInputValue && filteredData.length > 0) {
             filteredData.forEach(option => {
                 const optionElement = document.createElement("li");
@@ -298,7 +272,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     searchInput.value = option[Object.keys(option)[1]];
                     dropdownOptions.innerHTML = "";
                 });
-
                 dropdownOptions.appendChild(optionElement);
             });
             document.getElementById("dropdownOptions").style.display = "block";
@@ -306,7 +279,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("dropdownOptions").style.display = "none";
         }
     });
-
     document.addEventListener("click", (event) => {
         if (!searchInput.contains(event.target) && !dropdownOptions.contains(event.target)) {
             dropdownOptions.innerHTML = "";
