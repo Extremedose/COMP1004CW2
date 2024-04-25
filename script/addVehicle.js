@@ -42,15 +42,15 @@ async function sanityCheck() {
         addColour = addColour.charAt(0).toUpperCase() + addColour.slice(1).toLowerCase();
     }
     
-    var smallElement1 = document.querySelector('.form-box-add-vehicle-item1 small');
-    var smallElement2 = document.querySelector('.form-box-add-vehicle-item2 small');
-    var smallElement3 = document.querySelector('.form-box-add-vehicle-item3 small');
-    var smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
-    var smallElement5 = document.querySelector('.form-box-add-vehicle-item5 small');
-    var smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
-    var smallElement7 = document.querySelector('.form-box-add-vehicle-item7 small');
-    var smallElement8 = document.querySelector('.form-box-add-vehicle-item8 small');
-    var smallElement9 = document.querySelector('.form-box-add-vehicle-item9 small');
+    let smallElement1 = document.querySelector('.form-box-add-vehicle-item1 small');
+    let smallElement2 = document.querySelector('.form-box-add-vehicle-item2 small');
+    let smallElement3 = document.querySelector('.form-box-add-vehicle-item3 small');
+    let smallElement4 = document.querySelector('.form-box-add-vehicle-item4 small');
+    let smallElement5 = document.querySelector('.form-box-add-vehicle-item5 small');
+    let smallElement6 = document.querySelector('.form-box-add-vehicle-item6 small');
+    let smallElement7 = document.querySelector('.form-box-add-vehicle-item7 small');
+    let smallElement8 = document.querySelector('.form-box-add-vehicle-item8 small');
+    let smallElement9 = document.querySelector('.form-box-add-vehicle-item9 small');
 
     let errors = 0;
 
