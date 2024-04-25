@@ -126,7 +126,6 @@ nav>ul>li>a>button:hover {
     margin-top: 0.5em;
     border: 0.5px solid grey;
     border: 2px solid transparent;
-    margin-bottom: 1em;
 }
 
 .search-bar-class:focus{
@@ -204,10 +203,17 @@ nav>ul>li>a>button:hover {
 .form-box-add-vehicle div {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1em;
 }
 
 .form-box-add-vehicle div input {
     width: 90%;
+}
+
+div small{
+    visibility: hidden;
+    color: red;
+    font-weight: 600;
 }
 
 
