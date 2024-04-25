@@ -129,11 +129,11 @@ nav>ul>li>a>button:hover {
 }
 
 #search_input_text{
-    margin: 1em 0 2em 0;
+    margin: 1em 0 2em 0.5em;
 }
 
 #searchInputPeople{
-    margin: 1em 0 2em 0;
+    margin: 1em 0 2em 0.5em;
 }
 
 .search-bar-class:focus{
@@ -250,6 +250,7 @@ div small{
     max-height: 35em;
     overflow-y: auto;
 }
+
 
 .table-to-display>.table>table {
     width: 100%;
