@@ -1,6 +1,6 @@
 ﻿# COMP1004CW2
 
-## LINKS FOR 3 Webpages
+### LINKS FOR 3 Webpages
 
 Link 1: [People search]([https://link-url-here.org](https://extremedose.github.io/COMP1004CW2/)people.html)
 
