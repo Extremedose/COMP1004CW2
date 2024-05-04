@@ -77,7 +77,7 @@ async function search() {
             await loadData(searchInput, 'LicenseNumber');
 
         } else {
-            await loadData();
+            alert('Please select an option');
         }
 
     } catch (error) {
