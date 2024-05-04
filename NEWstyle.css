@@ -34,12 +34,12 @@ header {
 }
 
 .web-header-nav > nav > ul button {
-    background-color: white;
+    background-color: #fff;
     padding: 10px 15px 10px 15px;
 }
 
 .web-header-nav > nav > ul a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ main {
     background-color: transparent;
     padding: 0 0 10px 0;
     grid-column: 1;
-    border: 2px dashed black;
+    border: 2px dashed #000;
     margin-left: 1px;
     border-radius: 17px;
 }
@@ -134,12 +134,12 @@ main {
 }
 
 .search-bar-class:focus {
-    border: 2px solid black;
+    border: 2px solid #000;
     outline: none;
 }
 
 .search-bar-class:focus {
-    border: 2px solid black;
+    border: 2px solid #000;
     outline: none;
 }
 .form-box-add-vehicle-item1 {
@@ -237,7 +237,7 @@ div small {
 }
 
 .table-to-display>.table {
-    background-color: #0046587a;
+    background-color: #4b999e98;
     width: 85%;
     border: 2px solid;
     border-radius: 0.5em;
@@ -265,7 +265,7 @@ div small {
 }
 
 .table-to-display > .table > table > tbody > tr:nth-child(odd) {
-    background-color: #cec9c9;
+    background-color: #e6e4e4;
 }
 
 .no-data-found {
@@ -358,13 +358,13 @@ footer {
 }
 
 .second-footer-box-sitemap > ul > li > a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
 .second-footer-box-sitemap > ul > li > a:hover {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 0.5px;
