@@ -5,11 +5,13 @@
     <meta http-equiv="Content-Language" content="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find vehicle information quickly and easily with AutoTrack's Vehicle Search. Search by registration number to access detailed vehicle data including make, model, and color.">
     <meta name="author" content="Ayman Ali">
     <title>Vehicle Search | AutoTrack</title>
     <link rel="icon" type="image/x-icon" href="images/AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="NEWstyle.css">
     <script src="script/vehicle.js" defer></script>
+    <link rel="manifest" href="Manifest/manifestVehicle.json">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -42,7 +44,7 @@
                 <form>
                     <p>Search Vehicle Registration:</p>
 
-                    <label for="search_input">Input:</label>
+                    <label for="search_input_text">Input:</label>
                     <input type="text" class="search-bar-class" id="search_input_text" name="search_option"
                         onkeypress="handleKeyPress(event)" required maxlength="50" />
                     
