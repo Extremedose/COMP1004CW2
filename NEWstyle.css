@@ -5,8 +5,12 @@ body {
 }
 
 header {
-    width: 100%;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
 }
+/*header should have padding 10px, margin 10px, and border 1px solid black*/
 
 .web-title-header {
     background-color: #004658;
@@ -54,7 +58,7 @@ body > h1 {
     margin: 1em 0 1em 0;
 }
 
-main {
+#container{
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin-bottom: 10em;
@@ -90,7 +94,22 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
+
+.search-people-form-items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.search-people-form-items > label{
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin: 5px 10px 5px 0;
+}
+
 
 .search-people-form > form {
     width: 85%;
@@ -215,6 +234,16 @@ div small {
     font-weight: 600;
     display: block;
     height: 1.5em; 
+}
+
+#message{
+    visibility: hidden;
+    color: red;
+    font-weight: 600;
+    display: block;
+    height: 1.5em; 
+    font-size: 1em;
+    margin-top: 2em;
 }
 
 .title-for-table-result {

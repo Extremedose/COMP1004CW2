@@ -17,21 +17,21 @@ async function fetchOptions() {
     }
 }
 async function sanityCheck() {
-    const addNameInput = document.getElementById('form-box-add-vehicle-inputs-name');
+    const addNameInput = document.getElementById('name');
     let addName = addNameInput.value.trim();
     if (addName.includes(' ')) {
         addName = addName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
     } else {
         addName = addName.charAt(0).toUpperCase() + addName.slice(1).toLowerCase();
     }
-    const addAddress = document.getElementById('form-box-add-vehicle-inputs-address').value.charAt(0).toUpperCase() + document.getElementById('form-box-add-vehicle-inputs-address').value.slice(1).toLowerCase();
-    const addLicenseNumber = document.getElementById('form-box-add-vehicle-inputs-licenseNumber').value;
-    const addVehicleRegistration = document.getElementById('form-box-add-vehicle-inputs-vehicleRegistration').value.toUpperCase();
-    const addDOB = document.getElementById('form-box-add-vehicle-inputs-dob').value;
-    const addMake = document.getElementById('form-box-add-vehicle-inputs-make').value.charAt(0).toUpperCase() + document.getElementById('form-box-add-vehicle-inputs-make').value.slice(1).toLowerCase();
-    const addModel = document.getElementById('form-box-add-vehicle-inputs-model').value;
-    const addExpiryDate = document.getElementById('form-box-add-vehicle-inputs-expiryDate').value;
-    const addColourInput = document.getElementById('form-box-add-vehicle-inputs-colour');
+    const addAddress = document.getElementById('address').value.charAt(0).toUpperCase() + document.getElementById('address').value.slice(1).toLowerCase();
+    const addLicenseNumber = document.getElementById('license').value;
+    const addVehicleRegistration = document.getElementById('rego').value.toUpperCase();
+    const addDOB = document.getElementById('dob').value;
+    const addMake = document.getElementById('make').value.charAt(0).toUpperCase() + document.getElementById('make').value.slice(1).toLowerCase();
+    const addModel = document.getElementById('model').value;
+    const addExpiryDate = document.getElementById('expire').value;
+    const addColourInput = document.getElementById('colour');
 
     let addColour = addColourInput.value.trim();
     if (addColour.includes(' ')) {
@@ -46,7 +46,7 @@ async function sanityCheck() {
     if (addName === "") {
         document.querySelector('.form-box-add-vehicle-item1 small').textContent = "Name is required";
         document.querySelector('.form-box-add-vehicle-item1 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-name').style.border = "Solid Red 2px";
+        document.querySelector('#name').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item1 small').style.visibility = "hidden";
@@ -54,7 +54,7 @@ async function sanityCheck() {
     if (addAddress === "") {
         document.querySelector('.form-box-add-vehicle-item2 small').textContent = "Address is required";
         document.querySelector('.form-box-add-vehicle-item2 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-address').style.border = "Solid Red 2px";
+        document.querySelector('#address').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item2 small').style.visibility = "hidden";
@@ -62,12 +62,12 @@ async function sanityCheck() {
     if (addDOB === "") {
         document.querySelector('.form-box-add-vehicle-item3 small').textContent = "Date of Birth is required";
         document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-dob').style.border = "Solid Red 2px";
+        document.querySelector('#dob').style.border = "Solid Red 2px";
         errors++;
     } else if (dataToCheck[0] > today.getFullYear() || dataToCheck[0] == today.getFullYear() && dataToCheck[1] > (today.getMonth() + 1) || dataToCheck[0] == today.getFullYear() && dataToCheck[1] == (today.getMonth() + 1) && dataToCheck[2] > today.getDate()) {
         document.querySelector('.form-box-add-vehicle-item3 small').textContent = "Invalid Date";
         document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-dob').style.border = "Solid Red 2px";
+        document.querySelector('#dob').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item3 small').style.visibility = "hidden";
@@ -75,7 +75,7 @@ async function sanityCheck() {
     if (addLicenseNumber === "") {
         document.querySelector('.form-box-add-vehicle-item4 small').textContent = "License Number is required";
         document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-licenseNumber').style.border = "Solid Red 2px";
+        document.querySelector('#license').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item4 small').style.visibility = "hidden";
@@ -83,7 +83,7 @@ async function sanityCheck() {
     if (addExpiryDate === "") {
         document.querySelector('.form-box-add-vehicle-item5 small').textContent = "Expiry Date is required";
         document.querySelector('.form-box-add-vehicle-item5 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-expiryDate').style.border = "Solid Red 2px";
+        document.querySelector('#expire').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item5 small').style.visibility = "hidden";
@@ -91,7 +91,7 @@ async function sanityCheck() {
     if (addVehicleRegistration === "") {
         document.querySelector('.form-box-add-vehicle-item6 small').textContent = "Vehicle Registration is required";
         document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-vehicleRegistration').style.border = "Solid Red 2px";
+        document.querySelector('#rego').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item6 small').style.visibility = "hidden";
@@ -99,7 +99,7 @@ async function sanityCheck() {
     if (addMake === "") {
         document.querySelector('.form-box-add-vehicle-item7 small').textContent = "Make is required";
         document.querySelector('.form-box-add-vehicle-item7 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-make').style.border = "Solid Red 2px";
+        document.querySelector('#make').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item7 small').style.visibility = "hidden";
@@ -107,7 +107,7 @@ async function sanityCheck() {
     if (addModel === "") {
         document.querySelector('.form-box-add-vehicle-item8 small').textContent = "Model is required";
         document.querySelector('.form-box-add-vehicle-item8 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-model').style.border = "Solid Red 2px";
+        document.querySelector('#model').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item8 small').style.visibility = "hidden";
@@ -115,7 +115,7 @@ async function sanityCheck() {
     if (addColour === "") {
         document.querySelector('.form-box-add-vehicle-item9 small').textContent = "Colour is required";
         document.querySelector('.form-box-add-vehicle-item9 small').style.visibility = "visible";
-        document.querySelector('#form-box-add-vehicle-inputs-colour').style.border = "Solid Red 2px";
+        document.querySelector('#colour').style.border = "Solid Red 2px";
         errors++;
     } else {
         document.querySelector('.form-box-add-vehicle-item9 small').style.visibility = "hidden";
@@ -230,36 +230,36 @@ async function insertVehicle(ownerID, newVehicleRegistration, newMake, newModel,
     }
 }
 function clearForm() {
-    document.getElementById('form-box-add-vehicle-inputs-name').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-address').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-licenseNumber').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-vehicleRegistration').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-dob').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-make').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-model').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-expiryDate').value = '';
-    document.getElementById('form-box-add-vehicle-inputs-colour').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('license').value = '';
+    document.getElementById('rego').value = '';
+    document.getElementById('dob').value = '';
+    document.getElementById('make').value = '';
+    document.getElementById('model').value = '';
+    document.getElementById('expire').value = '';
+    document.getElementById('colour').value = '';
 
     document.querySelectorAll('.form-box-add-vehicle-item small').forEach(function (error) {
         error.textContent = '';
         error.style.visibility = 'hidden';
     });
-    document.querySelectorAll('#form-box-add-vehicle-inputs-name,\
-                            #form-box-add-vehicle-inputs-address,\
-                            #form-box-add-vehicle-inputs-licenseNumber,\
-                            #form-box-add-vehicle-inputs-vehicleRegistration,\
-                            #form-box-add-vehicle-inputs-dob,\
-                            #form-box-add-vehicle-inputs-make,\
-                            #form-box-add-vehicle-inputs-model,\
-                            #form-box-add-vehicle-inputs-expiryDate,\
-                            #form-box-add-vehicle-inputs-colour'
+    document.querySelectorAll('#name,\
+                            #address,\
+                            #license,\
+                            #rego,\
+                            #dob,\
+                            #make,\
+                            #model,\
+                            #expire,\
+                            #colour'
     ).forEach(function (input) {
 
         input.style.border = '';
     });
 }
 async function search() {
-    const searchInput = document.getElementById("form-box-add-vehicle-inputs-name").value.toLowerCase();
+    const searchInput = document.getElementById("name").value.toLowerCase();
     const data = await fetchOptions();
     const filteredData = data.filter(option => {
         const name = option[Object.keys(option)[1]].toLowerCase();
@@ -274,15 +274,15 @@ async function populateForm(selectedName) {
     const data = await fetchOptions();
     const matchingRow = data.filter(row => row.Name === selectedName);
     matchingRow.forEach(row => {
-        document.getElementById('form-box-add-vehicle-inputs-address').value = row.Address;
-        document.getElementById('form-box-add-vehicle-inputs-dob').value = row.DOB;
-        document.getElementById('form-box-add-vehicle-inputs-licenseNumber').value = row.LicenseNumber;
-        document.getElementById('form-box-add-vehicle-inputs-expiryDate').value = row.ExpiryDate;
+        document.getElementById('address').value = row.Address;
+        document.getElementById('dob').value = row.DOB;
+        document.getElementById('license').value = row.LicenseNumber;
+        document.getElementById('expire').value = row.ExpiryDate;
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("form-box-add-vehicle-inputs-name");
+    const searchInput = document.getElementById("name");
     const dropdownOptions = document.getElementById("dropdownOptions").querySelector("ul");
 
     searchInput.addEventListener("input", async () => {

@@ -5,13 +5,12 @@
     <meta http-equiv="Content-Language" content="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quickly find people information with AutoTrack's People Search. Search by name or license number to access detailed personal data including address, date of birth, and license expiry date.">
+    <meta name="description"
+        content="Quickly find people information with AutoTrack's People Search. Search by name or license number to access detailed personal data including address, date of birth, and license expiry date.">
     <meta name="author" content="Ayman Ali">
     <title>People Search | AutoTrack</title>
-    <link rel="icon" type="image/x-icon" href="images/AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="NEWstyle.css">
     <script src="script/people.js" defer></script>
-    <link rel="manifest" href="Manifest/manifestPeople.json">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -33,32 +32,37 @@
 
     <h1>People Search</h1>
 
-    <main>
+    <main id="container">
 
-        <div class="sidebar">
-            <img src="images/NEW-Hellcat-Charger-SRT.jpg" alt="Image of a Dodge Charger SRT Hellcat" class="sidebar-image">
-        </div>
+        <aside class="sidebar">
+            <img src="images/NEW-Hellcat-Charger-SRT.jpg" alt="Image of a Dodge Charger SRT Hellcat"
+                class="sidebar-image">
+        </aside>
 
         <div class="main-body">
-            
+
 
             <div class="search-people-form">
                 <form>
-                    <p>Search By:</p><br>
+                    <p>Search By:</p>
+                    <div class="search-people-form-items">
 
-                    <input type="radio" id="search_by_name" name="search_option" value="name" required>
-                    <label for="search_by_name">Name</label><br><br>
+                        <label for="people-search-input-name">Name</label>
+                        <input type="text" class="search-bar-class" id="name"
+                            name="people-search-input-name" onkeypress="handleKeyPress(event)" required
+                            maxlength="50" /> <br>
 
-                    <input type="radio" id="search_by_license_number" name="search_option" value="license_number"
-                        required>
-                    <label for="search_by_license_number">License Number</label><br><br>
+                        <label for="people-search-input-licenseNumber">Licence Number</label>
+                        <input type="text" class="search-bar-class" id="people-search-input-licenseNumber"
+                            name="people-search-input-licenseNumber" onkeypress="handleKeyPress(event)" required
+                            maxlength="50" /> <br>
 
-                    <label for="search_input">Input:</label>
-                    <input type="text" class="search-bar-class" id="searchInputPeople" name="search_option"
-                        onkeypress="handleKeyPress(event)" required maxlength="50" />
+                    </div>
+                    <button type="button" id="Submit" name="Submit" onclick="search()">Search</button>
+                    <div>
+                        <p id="message"></p>
+                    </div>
 
-                    <br>
-                    <button type="button" onclick="search()">Search</button>
                 </form>
             </div>
             <div class="title-for-table-result">
@@ -66,7 +70,7 @@
                     <h2>Results</h2>
                 </span>
             </div>
-            <div class="table-to-display">
+            <div class="table-to-display" id="results">
                 <div class="table">
                     <table id="people_table">
                         <thead>
@@ -112,9 +116,7 @@
                 <h3>Sitemap</h3>
                 <div class="second-footer-box-sitemap">
                     <ul>
-                        <li><a href="newPeople.html" target="_blank">People Search</a></li>
-                        <li><a href="newVehicle.html" target="_blank">Vehicle Search</a></li>
-                        <li><a href="newAdd-vehicle.html" target="_blank">Add Vehicle</a></li>
+                        <P>j</P>
                     </ul>
                 </div>
             </div>

@@ -8,10 +8,8 @@
     <meta name="description" content="Find vehicle information quickly and easily with AutoTrack's Vehicle Search. Search by registration number to access detailed vehicle data including make, model, and color.">
     <meta name="author" content="Ayman Ali">
     <title>Vehicle Search | AutoTrack</title>
-    <link rel="icon" type="image/x-icon" href="images/AutoTrack-Favicon-16x16.png">
     <link rel="stylesheet" href="NEWstyle.css">
     <script src="script/vehicle.js" defer></script>
-    <link rel="manifest" href="Manifest/manifestVehicle.json">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -34,7 +32,7 @@
 
     <h1>Vehicle search</h1>
 
-    <main>
+    <main id="container">
         <div class="sidebar">
             <img src="images/NEW-Hellcat-Charger-SRT.jpg" alt="Image of a Dodge Charger SRT Hellcat" class="sidebar-image">
         </div>
@@ -56,7 +54,7 @@
                     <h2>Results</h2>
                 </span>
             </div>
-            <div class="table-to-display">
+            <div class="table-to-display" id="results">
                 <div class="table">
                     <table id="vehicle_table">
                         <thead>
