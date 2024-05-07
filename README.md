@@ -4,6 +4,14 @@
 
 Link 1: [People search](/people.html)
 
-Link 2: [Vehicle search](https://extremedose.github.io/COMP1004CW2/vehicle.html)
+Link 2: [Vehicle search](/vehicle.html)
 
-Link 3: [Add a vehicle](https://extremedose.github.io/COMP1004CW2/add-vehicle.html)
+Link 3: [Add a vehicle](/add-vehicle.html)
+
+### PART 2
+
+Link 1: [NEW People search](/newPeople.html)
+
+Link 2: [NEW Vehicle search](/newVehicle.html)
+
+Link 3: [NEW Add a vehicle](/newAdd-vehicle.html)
