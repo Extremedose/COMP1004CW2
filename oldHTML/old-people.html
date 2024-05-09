@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Language" content="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AutoTrack is a comprehensive database management system for driving license information and vehicle registrations.">
+    <meta name="author" content="Ayman Ali">
+    <title>People Search | AutoTrack</title>
+    <link rel="icon" type="image/x-icon" href="../images/AutoTrack-Favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="../script/people.js" defer></script>
+    <link rel="manifest" href="Manifest/manifestPeople.json">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <header>
+        <div class="web-title-header">
+            <a href="old-people.html" target="_blank"><img src="../images/AutoTrack-Logo.png" alt="Logo for AutoTrack"></a>
+            <h1>AutoTrack</h1>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <h2>Content</h2>
+                    <br>
+                    <br>
+                    <li><a href="old-people.html"><button>People search</button></a></li>
+                    <li><a href="old-vehicle.html"><button>Vehicle search</button></a></li>
+                    <li><a href="old-add-vehicle.html"><button>Add a vehicle</button></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-body">
+            <h1>People Search</h1>
+
+            <div class="search-people-form">
+                <form>
+                    <p>Search By:</p><br>
+
+                    <input type="radio" id="search_by_name" name="search_option" value="name" required>
+                    <label for="search_by_name">Name</label><br><br>
+
+                    <input type="radio" id="search_by_license_number" name="search_option" value="license_number"
+                        required>
+                    <label for="search_by_license_number">License Number</label><br><br>
+
+                    <label for="search_input">Input:</label>
+                    <input type="text" class="search-bar-class" id="searchInputPeople" name="search_option"
+                        onkeypress="handleKeyPress(event)" required maxlength="50" />
+
+                    <br>
+                    <button type="button" onclick="search()">Search</button>
+                </form>
+            </div>
+            <div class="title-for-table-result">
+                <span>
+                    <h2>Results</h2>
+                </span>
+            </div>
+            <div class="table-to-display">
+                <div class="table">
+                    <table id="people_table">
+                        <thead>
+                            <tr>
+                                <th>PersonID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>DOB</th>
+                                <th>License Number</th>
+                                <th>ExpiryDate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="people-table_body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <svg class="footer-wave-svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+            </path>
+        </svg>
+        <div class="main-footer">
+
+            <div class="first-footer-box">
+                <h3>AutoTrack</h3>
+                <div class="first-footer-box-AutoTrack-description">
+                    <span>AutoTrack is the agency that is responsible for comprehensive database management for driving
+                        license information, vehicle registrations and monitoring.</span>
+                </div>
+                <div class="first-footer-box-copyRight">
+                    <span>&copy; Copyright 2024 by Ayman A. All Rights Reserved. This website is powered by HTML, CSS,
+                        JavaScript and SQL .</span>
+                </div>
+            </div>
+
+            <div class="second-footer-box">
+                <h3>Sitemap</h3>
+                <div class="second-footer-box-sitemap">
+                    <ul>
+                        <li><a href="old-people.html" target="_blank">People search</a></li>
+                        <li><a href="old-vehicle.html" target="_blank">Vehicle search</a></li>
+                        <li><a href="old-add-vehicle.html" target="_blank">Add a vehicle</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

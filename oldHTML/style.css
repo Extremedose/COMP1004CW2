@@ -1,0 +1,384 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 10px solid black;
+    background-color: #000;
+}
+
+.web-title-header {
+    background-color: #004658;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+}
+
+.web-title-header>h1 {
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-bottom: 10em;
+}
+
+.sidebar {
+    background-color: transparent;
+    padding: 0 0 10px 0;
+    grid-column: 1;
+}
+
+nav>ul>h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding-top: 0.8em;
+}
+
+nav>ul {
+    list-style-type: none;
+    background-color: #004658;
+    border-radius: 3px;
+}
+
+nav>ul>li {
+    padding: 15px 0 15px 0;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+}
+
+nav>ul>li>a>button {
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #249ba3c4;
+    color: #fff;
+    padding: 10px 0px 10px 0px;
+    border: 1px solid transparent;
+    display: block;
+    text-align: center;
+}
+
+nav>ul>li>a>button:hover {
+    letter-spacing: 2px;
+    transition: 0.18s ease-in;
+    cursor: pointer;
+    border-bottom-style: 1px solid;
+    border: 1px solid #fff;
+}
+
+.main-body {
+    grid-column: 2/5;
+    position: relative;
+    color: #004658;
+}
+
+.main-body>h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.search-people-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-people-form>form {
+    width: 70%;
+    background-color: #4b999e98;
+    border-radius: 0.8em;
+    border: 2px solid #000;
+    padding: 1em 1em 2em 2em;
+}
+
+.search-people-form>form>p {
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.search-people-form>form>label {
+    font-size: 1.1em;
+}
+
+.add-vehicle-form-label {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.search-bar-class {
+    width: 60%;
+    height: 2.25em;
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0.3em;
+    margin-top: 0.5em;
+    border: 0.5px solid grey;
+    border: 2px solid transparent;
+}
+
+#search_input_text{
+    margin: 1em 0 2em 0.5em;
+}
+
+#searchInputPeople{
+    margin: 1em 0 2em 0.5em;
+}
+
+.search-bar-class:focus{
+    border: 2px solid black;
+    outline: none;
+}
+
+.search-bar-class:focus {
+    border: 2px solid black;
+    outline: none;
+}
+.form-box-add-vehicle-item1 {
+    position: relative;
+}
+
+#dropdownOptions {
+    position: absolute;
+    top: calc(100% + 0.5em);
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+
+}
+
+.dropdown-option {
+    padding: 8px 12px 8px 0;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f2f2f2;
+}
+
+#dropdownOptions > ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+#dropdownOptions > ul > li {
+    color: #000;
+}
+
+
+
+.search-people-form>form>button {
+    margin-top: 0.5em;
+    padding: 0.55em 3em 0.55em 3em;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 0.5em;
+    border: 2px transparent solid;
+    display: block;
+}
+
+.search-people-form>form>button:hover {
+    border-radius: 0.5em;
+    border: 2px solid;
+    cursor: pointer;
+    transition: 0.18s ease-in;
+}
+
+.form-box-add-vehicle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    padding-top: 3em;
+}
+
+.form-box-add-vehicle div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+.form-box-add-vehicle div input {
+    width: 90%;
+}
+
+div small{
+    visibility: hidden;
+    color: red;
+    font-weight: 600;
+    display: block;
+    height: 1.5em; 
+}
+
+.title-for-table-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.title-for-table-result>span {
+    width: 70%;
+}
+
+.table-to-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10em;
+}
+
+.table-to-display>.table {
+    background-color: #0046587a;
+    width: 73%;
+    border: 2px solid;
+    border-radius: 0.5em;
+    max-height: 35em;
+    overflow-y: auto;
+}
+
+
+.table-to-display>.table>table {
+    width: 100%;
+}
+
+.table>table>thead>tr {
+    height: 3em;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.table>table>tbody>tr {
+    height: 2em;
+}
+
+.table-to-display>.table>table>tbody>tr:nth-child(even) {
+    background-color: #ffff;
+}
+
+.table-to-display>.table>table>tbody>tr:nth-child(odd) {
+    background-color: #cec9c9;
+}
+
+.no-data-found {
+    text-align: center;
+    background-color: #ffff;
+    color: #000;
+    font-weight: 600;
+    height: 3em;
+    font-size: 1.1em;
+}
+#success-message{
+    display: block;
+    margin-top: 2em;
+    color: darkgreen;
+    font-weight: 700;
+    font-size: 1.1em;
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+footer {
+    background-color: #004658;
+    padding-bottom: 40px;
+}
+
+.footer-wave-svg {
+    background-color: transparent;
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px;
+    width: 100%;
+}
+
+.footer-wave-path {
+    fill: #fff;
+}
+
+.main-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin: 0px 15px 0px 25px;
+    padding-top: 100px;
+}
+
+.main-footer>div {
+    padding: 0 5px 20px 20px;
+    min-height: 200px;
+}
+
+.first-footer-box {
+    position: relative;
+}
+
+.first-footer-box>h3 {
+    text-align: center;
+}
+
+.first-footer-box-AutoTrack-description {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.first-footer-box-copyRight {
+    position: absolute;
+    bottom: 0;
+}
+
+.second-footer-box {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.second-footer-box>h3 {
+    text-transform: uppercase;
+}
+
+.second-footer-box-sitemap {
+    padding: 0 0px 0 10px;
+}
+
+.second-footer-box-sitemap>ul>li {
+    padding-top: 15px;
+    list-style-type: circle;
+    text-decoration: none;
+
+}
+
+.second-footer-box-sitemap>ul>li>a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.second-footer-box-sitemap>ul>li>a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.18s ease-in;
+}
