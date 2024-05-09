@@ -47,18 +47,18 @@
                     <p>Search By:</p>
                     <div class="search-people-form-items">
 
-                        <label for="people-search-input-name">Name</label>
+                        <label for="name">Name</label>
                         <input type="text" class="search-bar-class" id="name"
-                            name="people-search-input-name" onkeypress="handleKeyPress(event)" required
+                            name="name" onkeypress="handleKeyPress(event)" required
                             maxlength="50" /> <br>
 
-                        <label for="people-search-input-licenseNumber">Licence Number</label>
-                        <input type="text" class="search-bar-class" id="people-search-input-licenseNumber"
-                            name="people-search-input-licenseNumber" onkeypress="handleKeyPress(event)" required
+                        <label for="license">Licence Number</label>
+                        <input type="text" class="search-bar-class" id="license"
+                            name="license" onkeypress="handleKeyPress(event)" required
                             maxlength="50" /> <br>
 
                     </div>
-                    <button type="button" id="Submit" name="Submit" onclick="search()">Search</button>
+                    <button type="button" id="Submit" onclick="search()">Search</button>
                     <div>
                         <p id="message"></p>
                     </div>
@@ -70,7 +70,7 @@
                     <h2>Results</h2>
                 </span>
             </div>
-            <div class="table-to-display" id="results">
+            <div class="table-to-display">
                 <div class="table">
                     <table id="people_table">
                         <thead>
@@ -83,7 +83,8 @@
                                 <th>ExpiryDate</th>
                             </tr>
                         </thead>
-                        <tbody id="people-table_body">
+                        <tbody id="results">
+                            
                         </tbody>
                     </table>
                 </div>
@@ -115,9 +116,13 @@
             <div class="second-footer-box">
                 <h3>Sitemap</h3>
                 <div class="second-footer-box-sitemap">
+                    <!--
                     <ul>
-                        <P>j</P>
+                        <li><a href="people.html" target="_blank">People Search</a></li>
+                        <li><a href="vehicle.html" target="_blank">Vehicle Search</a></li>
+                        <li><a href="add-vehicle.html" target="_blank">Add Vehicle</a></li>
                     </ul>
+                    -->
                 </div>
             </div>
 

@@ -55,7 +55,7 @@ async function loadData(searchInput = '') {
 }
 async function filterVehicle() {
   try {
-    const input = document.getElementById('search_input_text').value;
+    const input = document.getElementById('rego').value;
     await loadData(input);
   } catch (error) {
     console.error('Error fetching data:', error.message);

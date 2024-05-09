@@ -14,7 +14,7 @@ async function loadData(searchInput = '', selectionName) {
             data = data.filter(people => people.LicenseNumber.toUpperCase().includes(searchInput.toUpperCase()));
         }
 
-        const tableBody = document.getElementById('people-table_body');
+        const tableBody = document.getElementById('results');
         tableBody.innerHTML = '';
 
         data.forEach(people => {
@@ -48,26 +48,38 @@ async function search() {
         
         let messageElement = document.getElementById("message");
         const searchInputName = document.getElementById('name').value.trim();
-        const searchInputLicenseNumber = document.getElementById('people-search-input-licenseNumber').value.trim().toUpperCase();
+        const searchInputLicenseNumber = document.getElementById('license').value.trim().toUpperCase();
 
         if (searchInputName == "" && searchInputLicenseNumber == "") {
             console.log("No Search Inputs are filled");
+            document.querySelector('#message').style.color = "red";
             messageElement.textContent = "Error: No Seach Inputs have been Filled";
             document.querySelector('#message').style.visibility = "visible";
+            document.querySelector('#name').style.border = "Solid Red 2px";
+            document.querySelector('#license').style.border = "Solid Red 2px";
 
         } else if (searchInputName != "" && searchInputLicenseNumber != "") {
             console.log("Both Search Inputs are filled");
+            document.querySelector('#message').style.color = "red";
             messageElement.textContent = "Error: Both Seach Inputs have been Filled";
             document.querySelector('#message').style.visibility = "visible";
+            document.querySelector('#name').style.border = "Solid Red 2px";
+            document.querySelector('#license').style.border = "Solid Red 2px";
 
         } else {
-            document.querySelector('#message').style.visibility = "hidden";
+            messageElement.textContent = "Search successful";
+            document.querySelector('#message').style.visibility = "visible";
+            document.querySelector('#message').style.color = "#fff";
+            document.querySelector('#name').style.border = "Solid transparent 2px";
+            document.querySelector('#license').style.border = "Solid transparent 2px";
             
             if (searchInputName == "") {
+                document.querySelector('#license').style.border = "Solid green 2px";
                 console.log("License Number: " + searchInputLicenseNumber);
                 await loadData(searchInputLicenseNumber, "LicenseNumber");
 
             } else {
+                document.querySelector('#name').style.border = "Solid green 2px";
                 console.log("Name: " + searchInputName);
                 await loadData(searchInputName, "Name");
 
