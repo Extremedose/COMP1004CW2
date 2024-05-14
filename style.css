@@ -144,8 +144,8 @@ body > h1 {
     border: 2px solid transparent;
 }
 
-#rego {
-    margin: 1em 0 2em 0.5em;
+.vehicle-form > input{
+    margin: 2em 0 2em 0;
 }
 
 #searchInputPeople {

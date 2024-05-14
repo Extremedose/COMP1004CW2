@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Language" content="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find vehicle information quickly and easily with AutoTrack's Vehicle Search. Search by registration number to access detailed vehicle data including make, model, and color.">
+    <meta name="description" content="Quickly find people information with AutoTrack's People Search. Search by name or license number to access detailed personal data including address, date of birth, and license expiry date.">
     <meta name="author" content="Ayman Ali">
-    <title>Vehicle Search | AutoTrack</title>
-    <link rel="stylesheet" href="NEWstyle.css">
-    <script src="script/vehicle.js" defer></script>
+    <title>People Search | AutoTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script/people.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -21,32 +21,47 @@
         <div class="web-header-nav">
             <nav>
                 <ul>
-                    <li><a href="newPeople.html"><button>People search</button></a></li>
-                    <li><a href="newVehicle.html"><button>Vehicle search</button></a></li>
-                    <li><a href="newAdd-vehicle.html"><button>Add a vehicle</button></a></li>
+                    <li><a href="people.html"><button>People search</button></a></li>
+                    <li><a href="vehicle.html"><button>Vehicle search</button></a></li>
+                    <li><a href="add-vehicle.html"><button>Add a vehicle</button></a></li>
                 </ul>
             </nav>
         </div>
-        
     </header>
 
-    <h1>Vehicle search</h1>
+    <h1>People Search</h1>
 
     <main id="container">
-        <div class="sidebar">
-            <img src="images/NEW-Hellcat-Charger-SRT.jpg" alt="Image of a Dodge Charger SRT Hellcat" class="sidebar-image">
-        </div>
+
+        <aside class="sidebar">
+            <img src="images/NEW-Hellcat-Charger-SRT.jpg" alt="Image of a Dodge Charger SRT Hellcat"
+                class="sidebar-image">
+        </aside>
 
         <div class="main-body">
+
+
             <div class="search-people-form">
                 <form>
-                    <p>Search Vehicle Registration:</p>
+                    <p>Search By:</p>
+                    <div class="search-people-form-items">
 
-                    <label for="rego">Input:</label>
-                    <input type="text" class="search-bar-class" id="rego" name="search_option"
-                        onkeypress="handleKeyPress(event)" required maxlength="50" />
-                    
-                    <button type="button" onclick="filterVehicle()">Search</button>
+                        <label for="name">Name</label>
+                        <input type="text" class="search-bar-class" id="name"
+                            name="name" onkeypress="handleKeyPress(event)" required
+                            maxlength="50" /> <br>
+
+                        <label for="license">Licence Number</label>
+                        <input type="text" class="search-bar-class" id="license"
+                            name="license" onkeypress="handleKeyPress(event)" required
+                            maxlength="50" /> <br>
+
+                    </div>
+                    <button type="button" id="Submit" onclick="search()">Submit</button>
+                    <div>
+                        <p id="message"></p>
+                    </div>
+
                 </form>
             </div>
             <div class="title-for-table-result">
@@ -54,27 +69,27 @@
                     <h2>Results</h2>
                 </span>
             </div>
-            <div class="table-to-display" id="results">
+            <div class="table-to-display">
                 <div class="table">
-                    <table id="vehicle_table">
+                    <table id="people_table">
                         <thead>
                             <tr>
+                                <th>PersonID</th>
                                 <th>Name</th>
-                                <th>Licence Number</th>
-                                <th>VehicleID</th>
-                                <th>Make</th>
-                                <th>Model</th>
-                                <th>Colour</th>
+                                <th>Address</th>
+                                <th>DOB</th>
+                                <th>License Number</th>
+                                <th>ExpiryDate</th>
                             </tr>
                         </thead>
-                        <tbody id="vehicle-table_body">
+                        <tbody id="results">
+                            
                         </tbody>
                     </table>
                 </div>
             </div>
 
         </div>
-
     </main>
 
     <footer>
@@ -99,13 +114,14 @@
 
             <div class="second-footer-box">
                 <h3>Sitemap</h3>
-                <div class="second-footer-box-sitemap">
+                <!--<div class="second-footer-box-sitemap">
                     <ul>
-                        <li><a href="newPeople.html" target="_blank">People Search</a></li>
-                        <li><a href="newVehicle.html" target="_blank">Vehicle Search</a></li>
-                        <li><a href="newAdd-vehicle.html" target="_blank">Add Vehicle</a></li>
+                        <li><a href="people.html" target="_blank">People Search</a></li>
+                        <li><a href="vehicle.html" target="_blank">Vehicle Search</a></li>
+                        <li><a href="add-vehicle.html" target="_blank">Add Vehicle</a></li>
                     </ul>
                 </div>
+            -->
             </div>
 
         </div>

@@ -4,7 +4,7 @@ import exp from 'constants';
 const { test, expect} = require('@playwright/test');
 
 // change this to the URL of your website, could be local or GitHub pages
-const websiteURL = 'http://127.0.0.1:5501/newPeople.html';
+const websiteURL = 'http://127.0.0.1:5501/people.html';
 
 // Go to the website home page before each test.
 test.beforeEach(async ({ page }) => {
@@ -114,7 +114,7 @@ test ('search "rachel" should return two records', async ({page}) => {
    await page.getByRole('button', { name: 'Submit' }).click();
    await expect(page.locator('#results')).toContainText('SG345PQ')
    await expect(page.locator('#results')).toContainText('JK239GB')
-   await expect(page.locator('#results').locator('div')).toHaveCount(2)
+   await expect(page.locator('#results').locator('tr')).toHaveCount(2)
    await expect(page.locator('#message')).toContainText('Search successful')
 })
 
