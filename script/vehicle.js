@@ -29,12 +29,12 @@ async function loadData(searchInput = '') {
       const row = document.createElement('tr');
 
       row.innerHTML = `
-        <td>${vehicle.People ? vehicle.People.Name || 'Not Known' : 'Not Known'}</td>
-        <td>${vehicle.People ? vehicle.People.LicenseNumber || 'Not Known' : 'Not Known'}</td>
-        <td>${vehicle.VehicleID || 'Not Known'}</td>
-        <td>${vehicle.Make || 'Not Known'}</td>
-        <td>${vehicle.Model || 'Not Known'}</td>
-        <td>${vehicle.Colour || 'Not Known'}</td>
+        <td>${vehicle.People ? vehicle.People.Name || 'no owner' : 'no owner'}</td>
+        <td>${vehicle.People ? vehicle.People.LicenseNumber || 'no owner' : 'no owner'}</td>
+        <td>${vehicle.VehicleID || 'no owner'}</td>
+        <td>${vehicle.Make || 'no owner'}</td>
+        <td>${vehicle.Model || 'no owner'}</td>
+        <td>${vehicle.Colour || 'no owner'}</td>
       `;
       tableBody.appendChild(row);
 

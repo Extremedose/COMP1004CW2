@@ -124,7 +124,7 @@ test('search "KWK24JI" should return tesla but no owner', async ({page}) => {
    await page.locator('#rego').fill('KWK24JI')
    await page.getByRole('button', { name: 'Submit' }).click();
    await expect(page.locator('#results')).toContainText('Tesla')
-   await expect(page.locator('#results').locator('div')).toHaveCount(1)
+   await expect(page.locator('#results').locator('tr')).toHaveCount(1)
    await expect(page.locator('#message')).toContainText('Search successful')
 })
 
